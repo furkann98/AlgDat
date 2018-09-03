@@ -3,13 +3,13 @@ package Oblig1;
 public class Oblig1 {
 
     public static void main(String[] args){
-        int[] test = randomArray(16);
+        int[] test = randomArray(50);
 
         for( int i : test){
             System.out.print(i + ", ");
         }
         System.out.println();
-        System.out.println(maks(test));
+        System.out.println("Største tallet  i arrayen er: " + maks(test));
     };
 
     public static int[] randomArray(int n){
@@ -45,6 +45,7 @@ public class Oblig1 {
         for( int i : a){
             System.out.print(i + ", ");
         }
+        System.out.println();
         return maks;
     };
 }
