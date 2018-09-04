@@ -137,4 +137,30 @@ public class Oblig1 {
 
     }
 
+
+
+
+
+
+    // OPPGAVE 3
+
+
+    public static int AntallUlikeUSortert(int[] a) {
+
+
+        int antallVerdier = 0;
+
+        ArrayList<Integer> ulikeVerdier = new ArrayList<>();
+
+        for (int i = 0; i < a.length; i++) {
+            if (!ulikeVerdier.contains(a[i])) {
+                ulikeVerdier.add(a[i]);
+            }
+        }
+
+        antallVerdier = ulikeVerdier.size();
+
+        return antallVerdier;
+
+    }
 }
