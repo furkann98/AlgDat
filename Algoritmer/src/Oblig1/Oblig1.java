@@ -6,22 +6,15 @@ import java.util.NoSuchElementException;
 
 public class Oblig1 {
 
- /*  public static void main(String[] args) {
+   public static void main(String[] args) {
 
-        //int[] test = randomArray(10);
-
-        int[] test = {3,1,8, -9};
-
-       System.out.println("Før");
+        int[] test = randomArray(10);
+       delsortering(test);
        System.out.println(Arrays.toString(test));
-       antallUlikeUsortert(test);
-       System.out.println("Etter");
-       System.out.println(Arrays.toString(test));
-       // System.out.println(antallUlikeUsortert(test));
 
 
     }
-    */
+
 
     public static int maxValueArray(int[] a){
        int størst = a[0];
