@@ -1,30 +1,39 @@
 package Oblig1;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.NoSuchElementException;
 
 public class Oblig1 {
 
-    public static void main(String[] args) {
-
-
+ /*  public static void main(String[] args) {
 
         //int[] test = randomArray(10);
-        int[] test2 = {1,2,2,2,4,5};
-        //int testAntall = AntallUlikeSortert(test);
-        //System.out.println(testAntall);
-        int testAntall2 = AntallUlikeSortert(test2);
-        System.out.println(testAntall2);
-        /*
-        for( int i : test){
-            System.out.print(i + ", ");
-        }
-        System.out.println();
-        System.out.println("Største tallet  i arrayen er: " + ombyttinger(test));
-        */
+
+        int[] test = {3,1,8, -9};
+
+       System.out.println("Før");
+       System.out.println(Arrays.toString(test));
+       antallUlikeUsortert(test);
+       System.out.println("Etter");
+       System.out.println(Arrays.toString(test));
+       // System.out.println(antallUlikeUsortert(test));
+
 
     }
+    */
 
+    public static int maxValueArray(int[] a){
+       int størst = a[0];
+
+       for(int i : a){
+           if(i > størst){
+               størst = i;
+           }
+       }
+
+       return størst;
+    }
 
     public static int[] randomArray(int n) {
         int[] Array = new int[n];
@@ -57,15 +66,12 @@ public class Oblig1 {
                 a[i] = a[i + 1];
                 a[i + 1] = tmp;
 
-                maks = tmp;
+                //maks = tmp;
 
             }
         }
-        for (int i : a) {
-            System.out.print(i + ", ");
-        }
-        System.out.println();
-        return maks;
+        //Arrays.toString(a);
+        return a[a.length-1];
     }
 
     //OPPGAVE 1
@@ -115,7 +121,7 @@ public class Oblig1 {
 
 
     //OPPGAVE 2
-    public static int AntallUlikeSortert(int[] a) {
+    public static int antallUlikeSortert(int[] a) {
 
         for(int t = 0; t < a.length-1; t++){
             if(a[t] > a[t+1]) throw new IllegalStateException("Arrayen er ikke sortert i stigende rekkefølge!");
@@ -145,11 +151,41 @@ public class Oblig1 {
     // OPPGAVE 3
 
 
-    public static int AntallUlikeUSortert(int[] a) {
+    public static int antallUlikeUsortert(int[] a) {
+
+        if(a.length == 0){
+            return 0;
+        }
+        if(a.length == 1){
+            return 1;
+        }
 
 
         int antallVerdier = 0;
+        int maksVerdi = maxValueArray(a);
+        int startVerdi = 0;
 
+        for(int j = 0; j <= maksVerdi; j++) {
+
+            for (int i : a) {
+                if(startVerdi == i) {
+                    antallVerdier++;
+                    break;
+                }
+            }
+            if(startVerdi > maksVerdi){
+                System.out.println(startVerdi);
+                break;
+            }
+            startVerdi++;
+
+        }
+
+        return antallVerdier;
+
+
+
+/*
         ArrayList<Integer> ulikeVerdier = new ArrayList<>();
 
         for (int i = 0; i < a.length; i++) {
@@ -161,6 +197,39 @@ public class Oblig1 {
         antallVerdier = ulikeVerdier.size();
 
         return antallVerdier;
+*/
 
     }
+
+    //OPPGAVE 4
+
+    public static void delsortering(int[] a){
+
+        //System.out.println("Random Array: " + Arrays.toString(a));
+        int antOdd = 0;
+
+        //Sorterer hele arrayen i stigende rekkefølge
+        Arrays.sort(a);
+
+        //Sorterer oddetall på venstre side
+        for(int t = 0; t < a.length; t++){
+            int tmp = 0;
+
+            if(a[t]%2 == 1){
+                tmp = a[antOdd];
+                a[antOdd] = a[t];
+                a[t] = tmp;
+                antOdd++;
+            }
+
+        }
+        Arrays.sort(a,a.length-antOdd,a.length);
+        //System.out.println("DelSortert Array: " +Arrays.toString(a));
+
+
+
+
+    }
+
+
 }
