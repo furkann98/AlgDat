@@ -9,7 +9,7 @@ public class Oblig1 {
 
 
 
-        int[] test = randomArray(10);
+        //int[] test = randomArray(10);
         int[] test2 = {1,2,2,2,4,5};
         //int testAntall = AntallUlikeSortert(test);
         //System.out.println(testAntall);
