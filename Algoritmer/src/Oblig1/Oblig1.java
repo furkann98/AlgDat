@@ -49,3 +49,27 @@ public class Oblig1 {
         return maks;
     };
 }
+
+
+
+/*
+*
+* //Når blir det flest ombyttinger?
+* Når det største tallet er først i rekken(Arrayen)
+*
+*
+*
+* //Når blir det færrest?
+* Når det største tallet er sist i rekken
+*
+* //Hvor mange blir det i gjennomsnitt?
+*
+*
+*
+*
+*
+*
+*
+*
+*
+* */
