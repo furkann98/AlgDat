@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/Oblig1/Oblig1.java" line="8" mnemonic="7" />
+    <bookmark url="file://$PROJECT_DIR$/src/Oblig1/Oblig1.java" line="7" mnemonic="7" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4f02e6cd-45a7-4a91-8eaf-da823245fcb1" name="Default" comment="" />
@@ -28,8 +28,8 @@
       <file leaf-file-name="Oblig1.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Oblig1/Oblig1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="42" lean-forward="false" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
+            <state relative-caret-position="177">
+              <caret line="39" column="77" lean-forward="false" selection-start-line="39" selection-start-column="77" selection-end-line="39" selection-end-column="77" />
               <folding />
             </state>
           </provider>
@@ -244,12 +244,12 @@
       <option name="presentableId" value="Default" />
       <updated>1535370260352</updated>
       <workItem from="1535370266447" duration="3151000" />
-      <workItem from="1535968642887" duration="5608000" />
+      <workItem from="1535968642887" duration="6369000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8759000" />
+    <option name="totallyTimeSpent" value="9520000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1018" height="820" extended-state="0" />
@@ -326,8 +326,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Oblig1/Oblig1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="42" lean-forward="false" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
+        <state relative-caret-position="177">
+          <caret line="39" column="77" lean-forward="false" selection-start-line="39" selection-start-column="77" selection-end-line="39" selection-end-column="77" />
           <folding />
         </state>
       </provider>

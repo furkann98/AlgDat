@@ -6,9 +6,6 @@ public class Oblig1 {
 
     public static void main(String[] args){
 
-        int[] a = {1, 3, 7, 5, 2, 9};
-
-        System.out.println(ombyttinger(a));
         /*int[] test = randomArray(10);
 
         for( int i : test){
@@ -19,6 +16,7 @@ public class Oblig1 {
         */
 
     }
+
 
     public static int[] randomArray(int n){
       int[] Array = new int[n];
@@ -37,6 +35,7 @@ public class Oblig1 {
       return Array;
     };
 
+      //OPPGAVE 1
     public static int maks(int[] a){
         if(a.length == 0) throw new NoSuchElementException("Arrayen er tom");
 
@@ -59,6 +58,7 @@ public class Oblig1 {
         return maks;
     }
 
+    //OPPGAVE 1
     public static int ombyttinger(int[] a){
         if(a.length == 0) throw new NoSuchElementException("Arrayen er tom");
 
