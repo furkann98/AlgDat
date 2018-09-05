@@ -9,7 +9,7 @@ public class Oblig1 {
    public static void main(String[] args) {
 
        //int[] test = randomArray(10);
-       char[] test = {'a','b'};
+       char[] test = {'a','b','c','d'};
        rotasjon(test);
        System.out.println(Arrays.toString(test));
 
@@ -226,9 +226,7 @@ public class Oblig1 {
 
     //Oppgave 5
     public static void rotasjon(char[] a){
-        if(a.length == 0){
-
-        }else{
+        if(!(a.length == 0)){
             char[] b = new char[a.length];
 
             b[0] = a[a.length - 1];
@@ -242,9 +240,6 @@ public class Oblig1 {
             }
         }
 
-
-        //System.out.println("B FRA METODE; " + Arrays.toString(b));
-        //System.out.println("A FRA METODE: " + Arrays.toString(a));
     }
 
 
