@@ -9,8 +9,8 @@ public class Oblig1 {
    public static void main(String[] args) {
 
        //int[] test = randomArray(10);
-       char[] test = {'a','b','c'};
-       test = rotasjon(test);
+       char[] test = {'a','b'};
+       rotasjon(test);
        System.out.println(Arrays.toString(test));
 
     }
@@ -225,22 +225,26 @@ public class Oblig1 {
 
 
     //Oppgave 5
-    public static char[] rotasjon(char[] a){
-        if(a.length )
-        char[] b = Arrays.copyOf(a, a.length);
+    public static void rotasjon(char[] a){
+        if(a.length == 0){
 
-        b[0] = a[a.length - 1];
+        }else{
+            char[] b = new char[a.length];
 
-        for(int i = 1; i < a.length; i++){
-            b[i] = a[i-1];
+            b[0] = a[a.length - 1];
+
+            for(int i = 1; i < a.length; i++){
+                b[i] = a[i-1];
+            }
+
+            for (int j = 0; j<b.length; j++){
+                a[j] = b[j];
+            }
         }
 
-        a = Arrays.copyOf(b, b.length);
-        System.out.println("B FRA METODE; " + Arrays.toString(b));
-        System.out.println("A FRA METODE: " + Arrays.toString(a));
 
-        return a;
-
+        //System.out.println("B FRA METODE; " + Arrays.toString(b));
+        //System.out.println("A FRA METODE: " + Arrays.toString(a));
     }
 
 
