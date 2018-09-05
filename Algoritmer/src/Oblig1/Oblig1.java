@@ -8,10 +8,10 @@ public class Oblig1 {
 
    public static void main(String[] args) {
 
-        int[] test = randomArray(10);
-       delsortering(test);
+       //int[] test = randomArray(10);
+       char[] test = {'a','b','c'};
+       test = rotasjon(test);
        System.out.println(Arrays.toString(test));
-
 
     }
 
@@ -198,29 +198,48 @@ public class Oblig1 {
 
     public static void delsortering(int[] a){
 
-        //System.out.println("Random Array: " + Arrays.toString(a));
         int antOdd = 0;
 
-        //Sorterer hele arrayen i stigende rekkefølge
-        Arrays.sort(a);
-
         //Sorterer oddetall på venstre side
-        for(int t = 0; t < a.length; t++){
-            int tmp = 0;
+        for(int i = 0; i < a.length; i++){
 
-            if(a[t]%2 == 1){
-                tmp = a[antOdd];
-                a[antOdd] = a[t];
-                a[t] = tmp;
+            if(a[i]%2 != 0){
+                int tmp = a[antOdd];
+                a[antOdd] = a[i];
+                a[i] = tmp;
                 antOdd++;
             }
 
         }
-        Arrays.sort(a,a.length-antOdd,a.length);
-        //System.out.println("DelSortert Array: " +Arrays.toString(a));
+        if (antOdd == 0 || antOdd == a.length){
+            Arrays.sort(a);
+        }
+        else {
+            Arrays.sort(a,0,antOdd);
+            Arrays.sort(a,antOdd,a.length);
+
+        }
+
+    }
 
 
 
+    //Oppgave 5
+    public static char[] rotasjon(char[] a){
+        if(a.length )
+        char[] b = Arrays.copyOf(a, a.length);
+
+        b[0] = a[a.length - 1];
+
+        for(int i = 1; i < a.length; i++){
+            b[i] = a[i-1];
+        }
+
+        a = Arrays.copyOf(b, b.length);
+        System.out.println("B FRA METODE; " + Arrays.toString(b));
+        System.out.println("A FRA METODE: " + Arrays.toString(a));
+
+        return a;
 
     }
 

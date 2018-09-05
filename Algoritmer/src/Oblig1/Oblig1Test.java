@@ -27,7 +27,7 @@ public class Oblig1Test
         antallFeil += oppgave2();
         antallFeil += oppgave3();
         antallFeil += oppgave4();
-        //antallFeil += oppgave5();
+        antallFeil += oppgave5();
         //antallFeil += oppgave6();
         //antallFeil += oppgave7();
         //antallFeil += oppgave8();
@@ -391,7 +391,6 @@ public class Oblig1Test
                     break;
                 }
             }
-
             if (tid > 100)
             {
                 System.out.println
@@ -404,7 +403,7 @@ public class Oblig1Test
 
         return antallFeil;
     }
-/*
+
     ///// Oppgave 5 //////////////////////////////////////
 
     public static int oppgave5()
@@ -454,7 +453,7 @@ public class Oblig1Test
 
         return antallFeil;
     }
-
+/*
     ///// Oppgave 6 //////////////////////////////////////
 
     public static int oppgave6()
