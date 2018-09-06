@@ -2,7 +2,7 @@
 <project version="4">
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/src/Oblig1/Oblig1.java" line="8" mnemonic="7" />
-    <bookmark url="file://$PROJECT_DIR$/src/Oblig1/Oblig1.java" line="304" mnemonic="8" />
+    <bookmark url="file://$PROJECT_DIR$/src/Oblig1/Oblig1.java" line="305" mnemonic="8" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4f02e6cd-45a7-4a91-8eaf-da823245fcb1" name="Default" comment="" />
@@ -19,8 +19,8 @@
       <file leaf-file-name="Oblig1.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Oblig1/Oblig1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="152" column="8" lean-forward="false" selection-start-line="152" selection-start-column="8" selection-end-line="152" selection-end-column="8" />
+            <state relative-caret-position="453">
+              <caret line="171" column="12" lean-forward="false" selection-start-line="171" selection-start-column="12" selection-end-line="171" selection-end-column="12" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -255,7 +255,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43176000" />
+    <option name="totallyTimeSpent" value="43195000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="72" y="23" width="1280" height="712" extended-state="0" />
@@ -628,8 +628,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Oblig1/Oblig1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="152" column="8" lean-forward="false" selection-start-line="152" selection-start-column="8" selection-end-line="152" selection-end-column="8" />
+        <state relative-caret-position="453">
+          <caret line="171" column="12" lean-forward="false" selection-start-line="171" selection-start-column="12" selection-end-line="171" selection-end-column="12" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
