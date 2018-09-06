@@ -45,13 +45,12 @@ public class Oblig1 {
         return Array;
     }
 
-    ;
+
 
     //OPPGAVE 1
     public static int maks(int[] a) {
         if (a.length == 0) throw new NoSuchElementException("Arrayen er tom");
 
-        int maks = a[0];
 
         for (int i = 0; i < a.length - 1; i++) {
             if (a[i] > a[i + 1]) {
@@ -124,9 +123,9 @@ public class Oblig1 {
 
         ArrayList<Integer> ulikeVerdier = new ArrayList<>();
 
-        for (int i = 0; i < a.length; i++) {
-            if (!ulikeVerdier.contains(a[i])) {
-                ulikeVerdier.add(a[i]);
+        for (int i : a) {
+            if (!ulikeVerdier.contains(i)) {
+                ulikeVerdier.add(i);
             }
         }
 
@@ -176,22 +175,6 @@ public class Oblig1 {
 
         return antallVerdier;
 
-
-
-/*
-        ArrayList<Integer> ulikeVerdier = new ArrayList<>();
-
-        for (int i = 0; i < a.length; i++) {
-            if (!ulikeVerdier.contains(a[i])) {
-                ulikeVerdier.add(a[i]);
-            }
-        }
-
-        antallVerdier = ulikeVerdier.size();
-
-        return antallVerdier;
-*/
-
     }
 
     //OPPGAVE 4
@@ -224,7 +207,7 @@ public class Oblig1 {
 
 
 
-    //Oppgave 5
+    //OPPGAVE 5
     public static void rotasjon(char[] a){
         if(!(a.length == 0)){
             char[] b = new char[a.length];
@@ -241,6 +224,13 @@ public class Oblig1 {
         }
 
     }
+
+
+    //OPPGAVE 6
+
+
+
+
 
 
 }

@@ -391,7 +391,7 @@ public class Oblig1Test
                     break;
                 }
             }
-            System.out.println(tid);
+
             if (tid > 100)
             {
                 System.out.println
