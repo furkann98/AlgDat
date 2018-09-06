@@ -8,10 +8,7 @@ public class Oblig1 {
 
    public static void main(String[] args) {
 
-       //int[] test = randomArray(10);
-       char[] test = {'a','b','c','d'};
-       rotasjon(test,-3);
-       System.out.println(Arrays.toString(test));
+       flett("AM ","L","GEDS","ORATKRR","","R TRTE","IO","TGAUU");
 
     }
 
@@ -278,7 +275,54 @@ public class Oblig1 {
     }
 
 
-    //OPPGAVE
+    //OPPGAVE 7
+    //A
+    public static String flett(String s, String t){
+        StringBuilder sb = new StringBuilder();
+        int min = Math.min(s.length(), t.length());
+
+        //Legger til annehver
+        for(int i = 0; i < min; i++){
+            sb.append(s.charAt(i));
+            sb.append(t.charAt(i));
+        }
+
+        //Legger til resterende
+        sb.append(s.substring(min));
+        sb.append(t.substring(min));
+
+        return sb.toString();
+    }
+
+    //("AM ","L","GEDS","ORATKRR","","R TRTE","IO","TGAUU");
+    //B
+    public static String flett(String... s){
+        StringBuilder sb = new StringBuilder();
+
+        //finner maks
+        int max = 0;
+        for (int t = 0; t < s.length; t++){
+            if(s[t].length() > max){
+                max = s[t].length();
+            }
+        }
+
+
+        //Flett
+        for(int i = 0; i < max; i++){
+            for(int j = 0; j < s.length; j++){
+                if(s[j].length() <= i){
+                    continue;
+                }else{
+                    sb.append(s[j].charAt(i));
+                    continue;
+                }
+            }
+
+        }
+
+        return sb.toString();
+    }
 
 
 
