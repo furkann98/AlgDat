@@ -10,7 +10,7 @@ public class Oblig1 {
 
        //int[] test = randomArray(10);
        char[] test = {'a','b','c','d'};
-       rotasjon(test);
+       rotasjon(test,-3);
        System.out.println(Arrays.toString(test));
 
     }
@@ -227,6 +227,58 @@ public class Oblig1 {
 
 
     //OPPGAVE 6
+    public static void rotasjon(char[] a, int k){
+        if(!(a.length == 0 || k == 0)){
+
+            //Sjekker antall syklus
+            if(k > 0){
+                while(k > a.length){
+                    k -= a.length;
+                }
+            }
+            if(k < 0){
+                while(k < (a.length * -1)){
+                    k -= (a.length * -1);
+                }
+            }
+
+
+
+            //hjelpe-array
+            char[] b = new char[a.length];
+
+            if(k > 0){
+                //Flytter første verdiene
+                for (int i = 0; i < k; i++){
+                    b[i] = a[a.length - k + i];
+                }
+                //Flytter resterende
+                for (int j = k; j < a.length; j++){
+                    b[j] = a[j-k];
+                }
+            }
+            else{
+                //Flytter første verdiene
+                for (int i = a.length+k; i < a.length; i++){
+                    b[i] = a[i - (a.length + k)];
+                }
+                //Flytter resterende
+                for (int j = 0; j < a.length+k; j++){
+                    b[j] = a[j+(k*(-1))];
+                }
+
+            }
+
+            //Kopierer Array
+            for (int m = 0; m<b.length; m++){
+                a[m] = b[m];
+            }
+        }
+
+    }
+
+
+    //OPPGAVE
 
 
 

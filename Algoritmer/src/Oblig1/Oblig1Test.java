@@ -28,7 +28,7 @@ public class Oblig1Test
         antallFeil += oppgave3();
         antallFeil += oppgave4();
         antallFeil += oppgave5();
-        //antallFeil += oppgave6();
+        antallFeil += oppgave6();
         //antallFeil += oppgave7();
         //antallFeil += oppgave8();
         //antallFeil += oppgave9();
@@ -454,7 +454,7 @@ public class Oblig1Test
 
         return antallFeil;
     }
-/*
+
     ///// Oppgave 6 //////////////////////////////////////
 
     public static int oppgave6()
@@ -540,6 +540,7 @@ public class Oblig1Test
         Oblig1.rotasjon(x,99_999);
         tid = System.currentTimeMillis() - tid;
 
+
         if (tid > 20)
         {
             System.out.println("Oppgave 6: i) Metoden "
@@ -580,9 +581,10 @@ public class Oblig1Test
             antallFeil++;
         }
 
+
         return antallFeil;
     }
-
+/*
     ///// Oppgave 7 //////////////////////////////////////
 
     public static int oppgave7()
