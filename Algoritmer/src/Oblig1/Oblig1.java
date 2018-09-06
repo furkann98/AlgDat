@@ -150,6 +150,7 @@ public class Oblig1 {
         }
 
 
+        
         int antallVerdier = 0;
         int maksVerdi = maxValueArray(a);
         int startVerdi = 0;
