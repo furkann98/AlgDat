@@ -294,7 +294,6 @@ public class Oblig1 {
         return sb.toString();
     }
 
-    //("AM ","L","GEDS","ORATKRR","","R TRTE","IO","TGAUU");
     //B
     public static String flett(String... s){
         StringBuilder sb = new StringBuilder();
@@ -324,6 +323,8 @@ public class Oblig1 {
         return sb.toString();
     }
 
+
+    //OPPGAVE 8
 
 
 
