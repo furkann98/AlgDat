@@ -8,8 +8,18 @@ public class Oblig1 {
 
    public static void main(String[] args) {
 
-       flett("AM ","L","GEDS","ORATKRR","","R TRTE","IO","TGAUU");
+       //flett("AM ","L","GEDS","ORATKRR","","R TRTE","IO","TGAUU");
 
+       int[] test = {6, 10, 16, 11, 7, 12, 3, 9, 8, 5};
+
+       int[] svar = indekssortering(test);
+
+       for (int i = 0; i < svar.length ; i++) {
+           System.out.print(svar[i] + " ");
+
+       }
+
+       // Utskrift: [6, 9, 0, 4, 8, 7, 1, 3, 5, 2]
     }
 
 
@@ -327,6 +337,34 @@ public class Oblig1 {
 
 
     //OPPGAVE 8
+
+    // Utskrift: [6, 10, 16, 11, 7, 12, 3, 9, 8, 5] a er ikke endret
+    // Utskrift: [6, 9, 0, 4, 8, 7, 1, 3, 5, 2]
+
+    public static int[] indekssortering(int[] a){
+        //Indeks tabell
+        int[] aI = new int[a.length];
+
+        //Hjelpetabell
+        int[] aHjelp = a.clone();
+        
+
+        //Sorterer i stigende rekkefølge
+        Arrays.sort(aHjelp);
+
+        //Finner indeks/posisjon til verdiene.
+        for (int j = 0; j < aHjelp.length ; j++) {
+            for( int t = 0; t < a.length; t++){
+                if (aHjelp[j] == a[t] ){
+                    aI[j] = t;
+                }
+            }
+        }
+
+
+
+        return aI;
+    }
 
 
 
