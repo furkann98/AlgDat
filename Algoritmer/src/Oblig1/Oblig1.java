@@ -347,7 +347,7 @@ public class Oblig1 {
 
         //Hjelpetabell
         int[] aHjelp = a.clone();
-        
+
 
         //Sorterer i stigende rekkefølge
         Arrays.sort(aHjelp);
