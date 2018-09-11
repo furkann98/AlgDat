@@ -367,6 +367,87 @@ public class Oblig1 {
     }
 
 
+    //OPPGAVE 9
+
+    public static int[] tredjeMin(int[] a){
+
+        int n = a.length;     // tabellens lengde
+        if (n < 2) throw      // må ha minst to verdier
+                new java.util.NoSuchElementException("a.length(" + n + ") < 2!");
+
+
+        //int[] tredjeMin = {a[0],a[1], a[2]};
+
+        // int[] ITM = indekssortering(tredjeMin);
+
+
+
+        int IEn = 0;  // Posisjon til minste verdi
+        int ITo = 1;  // Posisjon til nest minste Verdi
+        int ITre = 2;  // Posisjon til tredje minste verdi
+
+/*
+        if(a[0] > a[1]){
+            IEn = 1;
+            ITo = 0;
+            ITre = 3;
+        }
+
+*/
+
+        int VEn = a[0];     //Verdi en i posisjon 0
+        int VTo = a[1];     //Verdi en i posisjon 1
+        int VTre = a[2];    //Verdi en i posisjon 2
+
+
+        for(int i = 3; i < a.length; i++){
+            if(a[i] < VEn){
+//                ITre  = ITo;
+//                VTre = VTo;
+//
+//                ITo  = IEn;
+//                VTo = VEn;
+
+                IEn = i;
+                VEn = a[i];
+
+
+            }
+
+
+            else  if(a[i] < VTo){
+//                ITo  = IEn;
+//                VTo = VEn;
+//
+//                ITre  = ITo;
+//                VTre = VTo;
+
+                ITo = i;
+                VTo = a[i];
+
+            }
+
+
+            else   if(a[i] < VTre){
+//                ITre  = i;
+//                VTre = a[i];
+//
+//                ITo  = IEn;
+//                VTo = VEn;
+
+                ITre = i;
+                VTre = a[i];
+
+            }
+
+        }
+        return new int[]{IEn,ITo, ITre};
+
+        //return ITM;
+    }
+
+
+  
 
 
 
