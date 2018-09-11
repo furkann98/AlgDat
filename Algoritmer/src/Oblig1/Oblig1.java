@@ -1,5 +1,6 @@
 package Oblig1;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.NoSuchElementException;
@@ -12,12 +13,13 @@ public class Oblig1 {
 
        int[] test = {6, 10, 16, 11, 7, 12, 3, 9, 8, 5};
 
+
        int[] svar = indekssortering(test);
 
-       for (int i = 0; i < svar.length ; i++) {
-           System.out.print(svar[i] + " ");
 
-       }
+       System.out.println(Arrays.toString(test));
+       System.out.println(Arrays.toString(svar));
+       System.out.println(Arrays.toString(tredjeMin(test)));
 
        // Utskrift: [6, 9, 0, 4, 8, 7, 1, 3, 5, 2]
     }
@@ -357,6 +359,7 @@ public class Oblig1 {
             for( int t = 0; t < a.length; t++){
                 if (aHjelp[j] == a[t] ){
                     aI[j] = t;
+                    break;
                 }
             }
         }
@@ -372,41 +375,32 @@ public class Oblig1 {
     public static int[] tredjeMin(int[] a){
 
         int n = a.length;     // tabellens lengde
-        if (n < 2) throw      // må ha minst to verdier
-                new java.util.NoSuchElementException("a.length(" + n + ") < 2!");
+        if (n < 3) throw new java.util.NoSuchElementException("a.length(" + n + ") < 2!");  // må ha minst to verdier
 
 
-        //int[] tredjeMin = {a[0],a[1], a[2]};
+        int[] tredjeMin = {a[0],a[1], a[2]};
 
-        // int[] ITM = indekssortering(tredjeMin);
+         int[] ITM = indekssortering(tredjeMin);
 
 
 
-        int IEn = 0;  // Posisjon til minste verdi
-        int ITo = 1;  // Posisjon til nest minste Verdi
-        int ITre = 2;  // Posisjon til tredje minste verdi
+        int IEn = ITM[0];  // Posisjon til minste verdi
+        int ITo = ITM[1];  // Posisjon til nest minste Verdi
+        int ITre = ITM[2];  // Posisjon til tredje minste verdi
 
-/*
-        if(a[0] > a[1]){
-            IEn = 1;
-            ITo = 0;
-            ITre = 3;
-        }
 
-*/
-
-        int VEn = a[0];     //Verdi en i posisjon 0
-        int VTo = a[1];     //Verdi en i posisjon 1
-        int VTre = a[2];    //Verdi en i posisjon 2
+        int VEn = a[IEn];     //Verdi en i posisjon 0
+        int VTo = a[ITo];     //Verdi en i posisjon 1
+        int VTre = a[ITre];    //Verdi en i posisjon 2
 
 
         for(int i = 3; i < a.length; i++){
             if(a[i] < VEn){
-//                ITre  = ITo;
-//                VTre = VTo;
-//
-//                ITo  = IEn;
-//                VTo = VEn;
+                ITre  = ITo;
+                VTre = VTo;
+
+                ITo  = IEn;
+                VTo = VEn;
 
                 IEn = i;
                 VEn = a[i];
@@ -415,12 +409,12 @@ public class Oblig1 {
             }
 
 
-            else  if(a[i] < VTo){
-//                ITo  = IEn;
-//                VTo = VEn;
-//
-//                ITre  = ITo;
-//                VTre = VTo;
+            else if(a[i] < VTo){
+              // ITo  = IEn;
+               // VTo = VEn;
+
+                ITre  = ITo;
+                VTre = VTo;
 
                 ITo = i;
                 VTo = a[i];
@@ -428,12 +422,12 @@ public class Oblig1 {
             }
 
 
-            else   if(a[i] < VTre){
-//                ITre  = i;
-//                VTre = a[i];
-//
-//                ITo  = IEn;
-//                VTo = VEn;
+            else if(a[i] < VTre){
+               // ITre  = i;
+                //VTre = a[i];
+
+               // ITo  = IEn;
+                //VTo = VEn;
 
                 ITre = i;
                 VTre = a[i];
@@ -443,7 +437,7 @@ public class Oblig1 {
         }
         return new int[]{IEn,ITo, ITre};
 
-        //return ITM;
+
     }
 
 
