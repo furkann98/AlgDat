@@ -447,7 +447,37 @@ public class Oblig1 {
     }
 
 
-  
+    //OPPGAVE 10
+
+    public static boolean inneholdt(String a, String b){
+        StringBuilder A = new StringBuilder();
+        StringBuilder B = new StringBuilder();
+        A.append(a.substring(0));
+        B.append(b.substring(0));
+
+        int antall = A.length();  // 4 antall
+        int test = 0;
+
+        boolean inneholder = false;
+
+        for(int i = 0; i < B.length(); i++){    // 6 lengde
+            if(test == antall){
+                inneholder = true;
+                break;
+            }
+            for(int t = 0; t < A.length(); t++){
+                if(A.charAt(t) == B.charAt(i)){
+                    test++;
+                    break;
+                }
+            }
+        }
+
+
+
+
+        return inneholder;
+    }
 
 
 
