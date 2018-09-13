@@ -25,6 +25,15 @@ public class Oblig1 {
     }
 
     //HJELPEMETODER
+
+    //Bytte metoden.
+    public static void bytt(int[] a, int iEn, int iTo){
+        int tmp = a[iEn];
+        a[iEn] = a[iTo];
+        a[iTo] = tmp;
+    }
+
+    // finner største int verdi
     public static int maxValueArray(int[] a){
        int størst = a[0];
 
@@ -37,6 +46,7 @@ public class Oblig1 {
        return størst;
     }
 
+    //Lager random array fra 1 til n
     public static int[] randomArray(int n) {
         int[] Array = new int[n];
 
@@ -46,19 +56,13 @@ public class Oblig1 {
 
         for (int i = Array.length - 1; i > 0; i--) {
             int r = (int) (Math.random() * i);
-            int tmp = Array[i];
-            Array[i] = Array[r];
-            Array[r] = tmp;
+            bytt(Array,i,r);
         }
 
         return Array;
     }
 
-    public static void bytt(int[] a, int iEn, int iTo){
-        int tmp = a[iEn];
-        a[iEn] = a[iTo];
-        a[iTo] = tmp;
-    }
+
 
 
 
@@ -69,13 +73,7 @@ public class Oblig1 {
 
         for (int i = 0; i < a.length - 1; i++) {
             if (a[i] > a[i + 1]) {
-
-                int tmp = a[i];
-                a[i] = a[i + 1];
-                a[i + 1] = tmp;
-
-                //maks = tmp;
-
+                bytt(a,i,i+1);
             }
         }
         //Arrays.toString(a);
@@ -90,10 +88,7 @@ public class Oblig1 {
 
         for (int i = 0; i < a.length - 1; i++) {
             if (a[i] > a[i + 1]) {
-                int tmp = a[i];
-                a[i] = a[i + 1];
-                a[i + 1] = tmp;
-
+                bytt(a,i,i+1);
                 antall++;
 
             }
@@ -195,9 +190,7 @@ public class Oblig1 {
         for(int i = 0; i < a.length; i++){
 
             if(a[i]%2 != 0){
-                int tmp = a[antOdd];
-                a[antOdd] = a[i];
-                a[i] = tmp;
+                bytt(a,antOdd,i);
                 antOdd++;
             }
 
@@ -426,12 +419,11 @@ public class Oblig1 {
 
     //OPPGAVE 10
 
-    public static boolean inneholdt(String ab, String bb){
-        char[] a = ab.toCharArray();
-        char[] b = bb.toCharArray();
+    public static boolean inneholdt(String en, String to){
+        if (en.length() > to.length()) return false;
 
-
-        if (a.length > b.length) return false;
+        char[] a = en.toCharArray();
+        char[] b = to.toCharArray();
 
         a = a.clone();     // lager en kopi
         b = b.clone();     // lager en kopi
@@ -439,7 +431,8 @@ public class Oblig1 {
         Arrays.sort(a);    // kvikksortering
         Arrays.sort(b);    // kvikksortering
 
-        int i = 0, j = 0;
+        int i = 0;
+        int j = 0;
 
         while (i < a.length && j < b.length)
         {

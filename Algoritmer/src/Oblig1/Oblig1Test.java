@@ -1098,7 +1098,6 @@ public class Oblig1Test
         b = Oblig1.inneholdt(s, t);
         tid = System.currentTimeMillis() - tid;
 
-        System.out.println(tid);
         if (tid > 100)
         {
             System.out.println
