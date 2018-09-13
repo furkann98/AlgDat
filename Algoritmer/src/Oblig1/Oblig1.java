@@ -54,6 +54,12 @@ public class Oblig1 {
         return Array;
     }
 
+    public static void bytt(int[] a, int iEn, int iTo){
+        int tmp = a[iEn];
+        a[iEn] = a[iTo];
+        a[iTo] = tmp;
+    }
+
 
 
     //OPPGAVE 1
@@ -63,6 +69,7 @@ public class Oblig1 {
 
         for (int i = 0; i < a.length - 1; i++) {
             if (a[i] > a[i + 1]) {
+
                 int tmp = a[i];
                 a[i] = a[i + 1];
                 a[i + 1] = tmp;
@@ -364,26 +371,22 @@ public class Oblig1 {
 
     public static int[] tredjeMin(int[] a){
 
-        int n = a.length;     // tabellens lengde
-        if (n < 3) throw new java.util.NoSuchElementException("a.length(" + n + ") < 2!");  // må ha minst to verdier
+        if (a.length < 3) throw new java.util.NoSuchElementException("a.length(" + a.length + ") < 2!");  // må ha minst to verdier
 
 
         int[] tredjeMin = {a[0],a[1], a[2]};
 
-         int[] ITM = indekssortering(tredjeMin);
+        int[] IndekssorteringTredjeMin = indekssortering(tredjeMin);
 
-
-
-        int IEn = ITM[0];  // Posisjon til minste verdi
-        int ITo = ITM[1];  // Posisjon til nest minste Verdi
-        int ITre = ITM[2];  // Posisjon til tredje minste verdi
-
+        int IEn = IndekssorteringTredjeMin[0];  // Posisjon til minste verdi
+        int ITo = IndekssorteringTredjeMin[1];  // Posisjon til nest minste Verdi
+        int ITre = IndekssorteringTredjeMin[2];  // Posisjon til tredje minste verdi
 
         int VEn = a[IEn];     //Verdi en i posisjon 0
         int VTo = a[ITo];     //Verdi en i posisjon 1
         int VTre = a[ITre];    //Verdi en i posisjon 2
 
-
+        //Itererer gjennom resten av arrayet, og plaserer mindre verdier i tredjeMin
         for(int i = 3; i < a.length; i++){
             if(a[i] < VEn){
                 ITre  = ITo;
@@ -400,9 +403,6 @@ public class Oblig1 {
 
 
             else if(a[i] < VTo){
-              // ITo  = IEn;
-               // VTo = VEn;
-
                 ITre  = ITo;
                 VTre = VTo;
 
@@ -413,12 +413,6 @@ public class Oblig1 {
 
 
             else if(a[i] < VTre){
-               // ITre  = i;
-                //VTre = a[i];
-
-               // ITo  = IEn;
-                //VTo = VEn;
-
                 ITre = i;
                 VTre = a[i];
 
@@ -426,7 +420,6 @@ public class Oblig1 {
 
         }
         return new int[]{IEn,ITo, ITre};
-
 
     }
 
