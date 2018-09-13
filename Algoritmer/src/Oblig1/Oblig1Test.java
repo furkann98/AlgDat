@@ -32,7 +32,7 @@ public class Oblig1Test
         antallFeil += oppgave7();
         antallFeil += oppgave8();
         antallFeil += oppgave9();
-        //antallFeil += oppgave10();
+        antallFeil += oppgave10();
 
         if (antallFeil == 0)
         {
@@ -958,7 +958,7 @@ public class Oblig1Test
 
         return antallFeil;
     }
-/*
+
     ///// Oppgave 10 //////////////////////////////////////
 
     public static int oppgave10()
@@ -1098,6 +1098,7 @@ public class Oblig1Test
         b = Oblig1.inneholdt(s, t);
         tid = System.currentTimeMillis() - tid;
 
+        System.out.println(tid);
         if (tid > 100)
         {
             System.out.println
@@ -1112,7 +1113,7 @@ public class Oblig1Test
             antallFeil++;
         }
         return antallFeil;
-    }*/
+    }
 
     ///// Hjelpemetoder /////////////////////////////
 

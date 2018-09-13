@@ -24,7 +24,7 @@ public class Oblig1 {
        // Utskrift: [6, 9, 0, 4, 8, 7, 1, 3, 5, 2]
     }
 
-
+    //HJELPEMETODER
     public static int maxValueArray(int[] a){
        int størst = a[0];
 
@@ -103,21 +103,11 @@ public class Oblig1 {
      * //Når blir det flest ombyttinger?
      * Når det største tallet er først i rekken(Arrayen)
      *
-     *
-     *
      * //Når blir det færrest?
      * Når det største tallet er sist i rekken
      *
      * //Hvor mange blir det i gjennomsnitt?
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
+     * Det varierer fra hvor mange tall vi har i arrayen.
      * */
 
 
@@ -443,34 +433,65 @@ public class Oblig1 {
 
     //OPPGAVE 10
 
-    public static boolean inneholdt(String a, String b){
-        StringBuilder A = new StringBuilder();
-        StringBuilder B = new StringBuilder();
-        A.append(a.substring(0));
-        B.append(b.substring(0));
+    public static boolean inneholdt(String ab, String bb){
+        char[] a = ab.toCharArray();
+        char[] b = bb.toCharArray();
 
-        int antall = A.length();  // 4 antall
-        int test = 0;
 
-        boolean inneholder = false;
+        if (a.length > b.length) return false;
 
-        for(int i = 0; i < B.length(); i++){    // 6 lengde
-            if(test == antall){
-                inneholder = true;
-                break;
+        a = a.clone();     // lager en kopi
+        b = b.clone();     // lager en kopi
+
+        Arrays.sort(a);    // kvikksortering
+        Arrays.sort(b);    // kvikksortering
+
+        int i = 0, j = 0;
+
+        while (i < a.length && j < b.length)
+        {
+            if (a[i] > b[j]) j++;
+            else if (a[i] == b[j])
+            {
+                i++; j++;
             }
-            for(int t = 0; t < A.length(); t++){
-                if(A.charAt(t) == B.charAt(i)){
-                    test++;
-                    break;
+            else return false;
+        }
+
+        return i == a.length;
+
+        /*
+        //INEFEKTIV - 20-30 sek på oppg 10 o)
+        if( a.length() > b.length()){
+            return false;
+        }
+
+        for(int i = 0; i < a.length(); i++){
+
+            char bokstav = a.charAt(i);
+
+            //Finner antall av bokstaven
+            int aAnt = 0;
+            for (int j = 0; j < a.length() ; j++) {
+                if(bokstav == a.charAt(j)){
+                    aAnt++;
                 }
+            }
+
+            int bAnt = 0;
+            for (int k = 0; k < b.length() ; k++) {
+                if(bokstav == b.charAt(k)){
+                    bAnt++;
+                }
+            }
+
+            if(bAnt < aAnt){
+                return false;
             }
         }
 
-
-
-
-        return inneholder;
+        return true;
+        */
     }
 
 
