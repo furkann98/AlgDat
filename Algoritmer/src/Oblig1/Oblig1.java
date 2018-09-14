@@ -1,12 +1,19 @@
 package Oblig1;
 
+/*
+*   Pedram Rahdeirjoo s325906
+*   Muhammed Furkan Ergin s325881
+* */
+
+
+
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.NoSuchElementException;
 
 public class Oblig1 {
-
+        /*
    public static void main(String[] args) {
 
        //flett("AM ","L","GEDS","ORATKRR","","R TRTE","IO","TGAUU");
@@ -22,7 +29,7 @@ public class Oblig1 {
        System.out.println(Arrays.toString(tredjeMin(test)));
 
        // Utskrift: [6, 9, 0, 4, 8, 7, 1, 3, 5, 2]
-    }
+    } */
 
     //HJELPEMETODER
 
@@ -33,17 +40,17 @@ public class Oblig1 {
         a[iTo] = tmp;
     }
 
-    // finner største int verdi
+    // finner stoerste int verdi
     public static int maxValueArray(int[] a){
-       int størst = a[0];
+       int stoerst = a[0];
 
        for(int i : a){
-           if(i > størst){
-               størst = i;
+           if(i > stoerst){
+               stoerst = i;
            }
        }
 
-       return størst;
+       return stoerst;
     }
 
     //Lager random array fra 1 til n
@@ -64,12 +71,9 @@ public class Oblig1 {
 
 
 
-
-
     //OPPGAVE 1
     public static int maks(int[] a) {
         if (a.length == 0) throw new NoSuchElementException("Arrayen er tom");
-
 
         for (int i = 0; i < a.length - 1; i++) {
             if (a[i] > a[i + 1]) {
@@ -79,6 +83,8 @@ public class Oblig1 {
         //Arrays.toString(a);
         return a[a.length-1];
     }
+
+
 
     //OPPGAVE 1
     public static int ombyttinger(int[] a) {
@@ -90,34 +96,32 @@ public class Oblig1 {
             if (a[i] > a[i + 1]) {
                 bytt(a,i,i+1);
                 antall++;
-
             }
         }
         return antall;
 
     }
 
-
-
-
-    /*
+    /*  TILLEGGSOPPGAVER TIL 1)
      *
-     * //Når blir det flest ombyttinger?
-     * Når det største tallet er først i rekken(Arrayen)
+     * //Naar blir det flest ombyttinger?
+     * Det blir flest ombyttinger naar det stoerste tallet er foerst i rekken(Arrayen)
      *
-     * //Når blir det færrest?
-     * Når det største tallet er sist i rekken
+     * //Naar blir det faerrest?
+     * Det blir faerest obmbyttinger naar det stoerste tallet er sist i rekken
      *
      * //Hvor mange blir det i gjennomsnitt?
      * Det varierer fra hvor mange tall vi har i arrayen.
+     * Men gjennomsnittlig blir det....
      * */
+
 
 
     //OPPGAVE 2
     public static int antallUlikeSortert(int[] a) {
 
         for(int t = 0; t < a.length-1; t++){
-            if(a[t] > a[t+1]) throw new IllegalStateException("Arrayen er ikke sortert i stigende rekkefølge!");
+            if(a[t] > a[t+1]) throw new IllegalStateException("Arrayen er ikke sortert i stigende rekkefoelge!");
         }
 
         int antallVerdier = 0;
@@ -133,7 +137,6 @@ public class Oblig1 {
         antallVerdier = ulikeVerdier.size();
 
         return antallVerdier;
-
     }
 
 
@@ -142,8 +145,6 @@ public class Oblig1 {
 
 
     // OPPGAVE 3
-
-
     public static int antallUlikeUsortert(int[] a) {
 
         if(a.length == 0){
@@ -152,8 +153,6 @@ public class Oblig1 {
         if(a.length == 1){
             return 1;
         }
-
-
 
         int antallVerdier = 0;
         int maksVerdi = maxValueArray(a);
@@ -172,12 +171,8 @@ public class Oblig1 {
                 break;
             }
             startVerdi++;
-
-            
         }
-
         return antallVerdier;
-
     }
 
     //OPPGAVE 4
@@ -186,14 +181,13 @@ public class Oblig1 {
 
         int antOdd = 0;
 
-        //Sorterer oddetall på venstre side
+        //Sorterer oddetall paa venstre side
         for(int i = 0; i < a.length; i++){
 
             if(a[i]%2 != 0){
                 bytt(a,antOdd,i);
                 antOdd++;
             }
-
         }
         if (antOdd == 0 || antOdd == a.length){
             Arrays.sort(a);
@@ -201,9 +195,7 @@ public class Oblig1 {
         else {
             Arrays.sort(a,0,antOdd);
             Arrays.sort(a,antOdd,a.length);
-
         }
-
     }
 
 
@@ -223,7 +215,6 @@ public class Oblig1 {
                 a[j] = b[j];
             }
         }
-
     }
 
 
@@ -244,12 +235,11 @@ public class Oblig1 {
             }
 
 
-
             //hjelpe-array
             char[] b = new char[a.length];
 
             if(k > 0){
-                //Flytter første verdiene
+                //Flytter foerste verdiene
                 for (int i = 0; i < k; i++){
                     b[i] = a[a.length - k + i];
                 }
@@ -259,7 +249,7 @@ public class Oblig1 {
                 }
             }
             else{
-                //Flytter første verdiene
+                //Flytter foerste verdiene
                 for (int i = a.length+k; i < a.length; i++){
                     b[i] = a[i - (a.length + k)];
                 }
@@ -267,7 +257,6 @@ public class Oblig1 {
                 for (int j = 0; j < a.length+k; j++){
                     b[j] = a[j+(k*(-1))];
                 }
-
             }
 
             //Kopierer Array
@@ -341,7 +330,7 @@ public class Oblig1 {
         int[] aHjelp = a.clone();
 
 
-        //Sorterer i stigende rekkefølge
+        //Sorterer i stigende rekkefoelge
         Arrays.sort(aHjelp);
 
         //Finner indeks/posisjon til verdiene.
@@ -364,7 +353,7 @@ public class Oblig1 {
 
     public static int[] tredjeMin(int[] a){
 
-        if (a.length < 3) throw new java.util.NoSuchElementException("a.length(" + a.length + ") < 2!");  // må ha minst to verdier
+        if (a.length < 3) throw new java.util.NoSuchElementException("a.length(" + a.length + ") < 2!");  // maa ha minst to verdier
 
 
         int[] tredjeMin = {a[0],a[1], a[2]};
@@ -390,8 +379,6 @@ public class Oblig1 {
 
                 IEn = i;
                 VEn = a[i];
-
-
             }
 
 
@@ -401,19 +388,16 @@ public class Oblig1 {
 
                 ITo = i;
                 VTo = a[i];
-
             }
 
 
             else if(a[i] < VTre){
                 ITre = i;
                 VTre = a[i];
-
             }
 
         }
         return new int[]{IEn,ITo, ITre};
-
     }
 
 
@@ -446,40 +430,5 @@ public class Oblig1 {
 
         return i == a.length;
 
-        /*
-        //INEFEKTIV - 20-30 sek på oppg 10 o)
-        if( a.length() > b.length()){
-            return false;
-        }
-
-        for(int i = 0; i < a.length(); i++){
-
-            char bokstav = a.charAt(i);
-
-            //Finner antall av bokstaven
-            int aAnt = 0;
-            for (int j = 0; j < a.length() ; j++) {
-                if(bokstav == a.charAt(j)){
-                    aAnt++;
-                }
-            }
-
-            int bAnt = 0;
-            for (int k = 0; k < b.length() ; k++) {
-                if(bokstav == b.charAt(k)){
-                    bAnt++;
-                }
-            }
-
-            if(bAnt < aAnt){
-                return false;
-            }
-        }
-
-        return true;
-        */
     }
-
-
-
 }
