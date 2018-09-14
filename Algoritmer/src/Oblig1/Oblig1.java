@@ -1,73 +1,19 @@
 package Oblig1;
 
 /*
-*   Pedram Rahdeirjoo s325906
-*   Muhammed Furkan Ergin s325881
+*   @author Pedram Rahdeirjoo s325906
+*   @author Muhammed Furkan Ergin s325881
 * */
 
 
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.NoSuchElementException;
 
 public class Oblig1 {
-        /*
-   public static void main(String[] args) {
-
-       //flett("AM ","L","GEDS","ORATKRR","","R TRTE","IO","TGAUU");
-
-       int[] test = {6, 10, 16, 11, 7, 12, 3, 9, 8, 5};
 
 
-       int[] svar = indekssortering(test);
-
-
-       System.out.println(Arrays.toString(test));
-       System.out.println(Arrays.toString(svar));
-       System.out.println(Arrays.toString(tredjeMin(test)));
-
-       // Utskrift: [6, 9, 0, 4, 8, 7, 1, 3, 5, 2]
-    } */
-
-    //HJELPEMETODER
-
-    //Bytte metoden.
-    public static void bytt(int[] a, int iEn, int iTo){
-        int tmp = a[iEn];
-        a[iEn] = a[iTo];
-        a[iTo] = tmp;
-    }
-
-    // finner stoerste int verdi
-    public static int maxValueArray(int[] a){
-       int stoerst = a[0];
-
-       for(int i : a){
-           if(i > stoerst){
-               stoerst = i;
-           }
-       }
-
-       return stoerst;
-    }
-
-    //Lager random array fra 1 til n
-    public static int[] randomArray(int n) {
-        int[] Array = new int[n];
-
-        for (int i = 0; i < Array.length; i++) {
-            Array[i] = i + 1;
-        }
-
-        for (int i = Array.length - 1; i > 0; i--) {
-            int r = (int) (Math.random() * i);
-            bytt(Array,i,r);
-        }
-
-        return Array;
-    }
 
 
 
@@ -86,7 +32,7 @@ public class Oblig1 {
 
 
 
-    //OPPGAVE 1
+    //OPPGAVE 1 - B
     public static int ombyttinger(int[] a) {
         if (a.length == 0) throw new NoSuchElementException("Arrayen er tom");
 
@@ -112,7 +58,7 @@ public class Oblig1 {
      *
      * //Hvor mange blir det i gjennomsnitt?
      * Det varierer fra hvor mange tall vi har i arrayen.
-     * Men gjennomsnittlig blir det....
+     *
      * */
 
 
@@ -175,8 +121,8 @@ public class Oblig1 {
         return antallVerdier;
     }
 
-    //OPPGAVE 4
 
+    //OPPGAVE 4
     public static void delsortering(int[] a){
 
         int antOdd = 0;
@@ -197,6 +143,7 @@ public class Oblig1 {
             Arrays.sort(a,antOdd,a.length);
         }
     }
+    //Kan også bruke partisjonsteknikken
 
 
 
@@ -317,10 +264,8 @@ public class Oblig1 {
     }
 
 
+    
     //OPPGAVE 8
-
-    // Utskrift: [6, 10, 16, 11, 7, 12, 3, 9, 8, 5] a er ikke endret
-    // Utskrift: [6, 9, 0, 4, 8, 7, 1, 3, 5, 2]
 
     public static int[] indekssortering(int[] a){
         //Indeks tabell
@@ -431,4 +376,45 @@ public class Oblig1 {
         return i == a.length;
 
     }
+
+
+
+    //HJELPEMETODER
+
+    //Bytte metoden.
+    public static void bytt(int[] a, int iEn, int iTo){
+        int tmp = a[iEn];
+        a[iEn] = a[iTo];
+        a[iTo] = tmp;
+    }
+
+    // finner stoerste int verdi
+    public static int maxValueArray(int[] a){
+        int stoerst = a[0];
+
+        for(int i : a){
+            if(i > stoerst){
+                stoerst = i;
+            }
+        }
+
+        return stoerst;
+    }
+
+    //Lager random array fra 1 til n
+    public static int[] randomArray(int n) {
+        int[] Array = new int[n];
+
+        for (int i = 0; i < Array.length; i++) {
+            Array[i] = i + 1;
+        }
+
+        for (int i = Array.length - 1; i > 0; i--) {
+            int r = (int) (Math.random() * i);
+            bytt(Array,i,r);
+        }
+
+        return Array;
+    }
+
 }
