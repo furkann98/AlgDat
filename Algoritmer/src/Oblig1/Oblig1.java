@@ -264,7 +264,7 @@ public class Oblig1 {
     }
 
 
-    
+
     //OPPGAVE 8
 
     public static int[] indekssortering(int[] a){
