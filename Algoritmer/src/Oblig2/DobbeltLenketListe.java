@@ -10,6 +10,19 @@ package Oblig2;
 
 import java.util.*;
 
+//MAIN
+class Main {
+    public static void main(String[] args) {
+
+        DobbeltLenketListe<Integer> liste = new DobbeltLenketListe<>();
+        System.out.println(liste.toString() + ""+ liste.omvendtString());
+        for(int i = 1; i <= 3; i++){liste.leggInn(i);
+            System.out.println(liste.toString() + ""+ liste.omvendtString());
+        }
+    }
+
+}
+
 public class DobbeltLenketListe<T> implements Liste<T>
 {
     private static final class Node<T>   // en indre nodeklasse
@@ -42,7 +55,21 @@ public class DobbeltLenketListe<T> implements Liste<T>
     // hjelpemetode
     private Node<T> finnNode(int indeks)
     {
-        throw new UnsupportedOperationException("Ikke laget ennå!");
+        Node<T> returnNode;
+
+        if(indeks < antall/2){
+            returnNode = hode;
+            for (int i = 0; i < indeks ; i++) {
+                returnNode = returnNode.neste;
+            }
+        }else{ //feil logikk
+            returnNode = hale;
+            for (int i = 1; i < (antall - indeks); i++) {
+               returnNode = returnNode.forrige;
+            }
+
+        }
+        return returnNode;
     }
 
     // konstruktør
@@ -158,7 +185,8 @@ public class DobbeltLenketListe<T> implements Liste<T>
     @Override
     public T hent(int indeks)
     {
-        throw new UnsupportedOperationException("Ikke laget ennå!");
+        indeksKontroll(indeks, false);
+        return finnNode(indeks).verdi;
     }
 
     @Override
@@ -178,7 +206,18 @@ public class DobbeltLenketListe<T> implements Liste<T>
     @Override
     public T oppdater(int indeks, T nyverdi)
     {
-        throw new UnsupportedOperationException("Ikke laget ennå!");
+        indeksKontroll(indeks,false);
+        Objects.requireNonNull(nyverdi,"Verdien kan ikke være null");
+        
+        Node<T> gammelNode = finnNode(indeks);
+        T gammelVerdi = gammelNode.verdi;
+
+        gammelNode.verdi = nyverdi;
+
+
+        endringer++;
+        return gammelVerdi;
+
     }
 
     @Override
@@ -352,16 +391,5 @@ public class DobbeltLenketListe<T> implements Liste<T>
 
 
 
-//MAIN
-class Main {
-    public static void main(String[] args) {
 
-        DobbeltLenketListe<Integer> liste = new DobbeltLenketListe<>();
-        System.out.println(liste.toString() + ""+ liste.omvendtString());
-        for(int i = 1; i <= 3; i++){liste.leggInn(i);
-            System.out.println(liste.toString() + ""+ liste.omvendtString());
-        }
-    }
-
-}
 
