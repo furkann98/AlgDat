@@ -8,11 +8,7 @@ package Oblig2;
 
 
 
-import java.util.Comparator;
-import java.util.ConcurrentModificationException;
-import java.util.Iterator;
-import java.util.NoSuchElementException;
-import java.util.Objects;
+import java.util.*;
 
 public class DobbeltLenketListe<T> implements Liste<T>
 {
@@ -41,7 +37,7 @@ public class DobbeltLenketListe<T> implements Liste<T>
     private Node<T> hode;          // peker til den første i listen
     private Node<T> hale;          // peker til den siste i listen
     private int antall;            // antall noder i listen
-    private int endringer;   // antall endringer i listen
+    private int endringer;      // antall endringer i listen
 
     // hjelpemetode
     private Node<T> finnNode(int indeks)
@@ -72,13 +68,22 @@ public class DobbeltLenketListe<T> implements Liste<T>
     @Override
     public int antall()
     {
-        throw new UnsupportedOperationException("Ikke laget ennå!");
+        return antall;
+
+        /*
+                 public int antall(){
+                    int antall = 0;
+                    for (T t : this) antall++;   // bruker en forAlle-løkke
+                    return antall;
+                  }
+
+        */
     }
 
     @Override
     public boolean tom()
     {
-        throw new UnsupportedOperationException("Ikke laget ennå!");
+        return antall == 0;     // listen er tom hvis antall er 0
     }
 
     @Override
@@ -90,7 +95,24 @@ public class DobbeltLenketListe<T> implements Liste<T>
     @Override
     public void leggInn(int indeks, T verdi)
     {
-        throw new UnsupportedOperationException("Ikke laget ennå!");
+        //throw new UnsupportedOperationException("Ikke laget ennå!");
+
+        /*
+        if (verdi == null) throw new
+                IllegalArgumentException("Ulovlig å legge inn null-verdier!");
+
+        if (indeks < 0 || indeks > antall) throw new
+                IndexOutOfBoundsException("Indeks " + indeks + " er ulovlig!");
+
+        // En full tabell utvides med 50%
+        if (antall == a.length) a = Arrays.copyOf(a,(3*antall)/2 + 1);
+
+        // rydder plass til den nye verdien
+        for (int i = antall; i > indeks; i--) a[i] = a[i-1];
+        a[indeks] = verdi;     // setter inn ny verdi
+
+        antall++;
+        */
     }
 
     @Override
@@ -109,6 +131,14 @@ public class DobbeltLenketListe<T> implements Liste<T>
     public int indeksTil(T verdi)
     {
         throw new UnsupportedOperationException("Ikke laget ennå!");
+
+        /*
+        for (int i = 0; i < antall; i++)
+       {
+            if (a[i].equals(verdi)) return i;   // funnet!
+         }
+             return -1;   // ikke funnet!
+         */
     }
 
     @Override
@@ -132,6 +162,23 @@ public class DobbeltLenketListe<T> implements Liste<T>
     @Override
     public void nullstill()
     {
+
+        /*
+         public int antall(){
+            int antall = 0;
+            for (T t : this) antall++;   // bruker en forAlle-løkke
+            return antall;
+          }
+
+        */
+
+        /*
+
+        hode = null;
+        hale = null;
+        antall = 0;
+        antallEndringer++;
+         */
         throw new UnsupportedOperationException("Ikke laget ennå!");
     }
 
@@ -190,12 +237,48 @@ public class DobbeltLenketListe<T> implements Liste<T>
         public T next()
         {
             throw new UnsupportedOperationException("Ikke laget ennå!");
+            /*
+         if (!hasNext()){
+         throw new NoSuchElementException("Tomt eller ingen verdier igjen!");
+         }
+
+
+          T temp = a[denne];         // henter aktuell verdi
+          denne++;                   // flytter indeksen
+          removeOK = true;           // nå kan remove() kalles
+          return temp;
+          */
         }
 
         @Override
         public void remove()
         {
             throw new UnsupportedOperationException("Ikke laget ennå!");
+
+            /*
+               if (!removeOK) {throw new IllegalStateException("Ulovlig tilstand!");}
+
+              removeOK = false;          // remove() kan ikke kalles på nytt
+
+              // verdien i posisjon denne - 1 skal fjernes siden den ble returnert
+              // i det siste kallet på next(), verdiene fra og med denne flyttes
+              // derfor en enhet mot venstre
+
+              antall--;           // en verdi vil bli fjernet
+              denne--;            // denne må flyttes til venstre
+
+              for (int i = denne; i < antall; i++)
+              {
+                a[i] = a[i+1];    // verdiene flyttes
+              }
+
+              a[antall] = null;   // verdien som lå lengst til høyre nulles
+             }
+                     */
+
+
+
+
         }
 
     } // DobbeltLenketListeIterator
@@ -211,6 +294,7 @@ public class DobbeltLenketListe<T> implements Liste<T>
 class Main {
     public static void main(String[] args) {
         Liste<String> liste = new DobbeltLenketListe<>();
+        System.out.println(liste.antall() + " " + liste.tom());
     }
 
 }
