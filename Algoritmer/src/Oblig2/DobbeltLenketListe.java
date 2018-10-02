@@ -104,13 +104,32 @@ public class DobbeltLenketListe<T> implements Liste<T>
     @Override
     public boolean leggInn(T verdi)
     {
-        throw new UnsupportedOperationException("Ikke laget ennå!");
+        Objects.requireNonNull(verdi,"Verdien kan ikke være Null"); // Sjekker om verdien er null
+
+        //Sjekker om Listen er tom, og gjør den første verdi til: node = hale = hode;
+        if(tom()){
+            Node<T> node = new Node<>(verdi, null,null);
+            hale = hode = node;
+            antall++;
+            return true;
+        }else{ //Legger til bakerst
+            Node<T> node = new Node<>(verdi, hale,null);
+            hale.neste = node;
+            hale = node;
+            antall++;
+            return true;
+        }
+
+        //throw new UnsupportedOperationException("Ikke laget ennå!");
     }
 
     @Override
     public void leggInn(int indeks, T verdi)
     {
-        //throw new UnsupportedOperationException("Ikke laget ennå!");
+        throw new UnsupportedOperationException("Ikke laget ennå!");
+
+
+
 
         /*
         if (verdi == null) throw new
@@ -124,7 +143,7 @@ public class DobbeltLenketListe<T> implements Liste<T>
 
         // rydder plass til den nye verdien
         for (int i = antall; i > indeks; i--) a[i] = a[i-1];
-        a[indeks] = verdi;     // setter inn ny verdi
+        verdi[indeks] = verdi;     // setter inn ny verdi
 
         antall++;
         */
@@ -208,7 +227,7 @@ public class DobbeltLenketListe<T> implements Liste<T>
             sb.append(p.verdi);
             p = p.neste;
 
-            for(; p != null;){
+            while( p != null){
                 sb.append(", ").append(p.verdi);
                 p = p.neste;
             }
@@ -336,11 +355,12 @@ public class DobbeltLenketListe<T> implements Liste<T>
 //MAIN
 class Main {
     public static void main(String[] args) {
-        String[] s1 = {}, s2 = {"A"}, s3 = {null,"A",null,"B",null};
-        DobbeltLenketListe<String> l1 = new DobbeltLenketListe<>(s1);
-        DobbeltLenketListe<String> l2 = new DobbeltLenketListe<>(s2);
-        DobbeltLenketListe<String> l3 = new DobbeltLenketListe<>(s3);
-        System.out.println(l1.toString() + " "+ l2.toString()+ " "+ l3.toString());
+
+        DobbeltLenketListe<Integer> liste = new DobbeltLenketListe<>();
+        System.out.println(liste.toString() + ""+ liste.omvendtString());
+        for(int i = 1; i <= 3; i++){liste.leggInn(i);
+            System.out.println(liste.toString() + ""+ liste.omvendtString());
+        }
     }
 
 }
