@@ -101,10 +101,40 @@ public class DobbeltLenketListe<T> implements Liste<T>
         }
     }
 
+    //FraTilKontroll
+    private void fratilKontroll(int antall, int fra, int til)
+      {
+        if (fra < 0)                                  // fra er negativ
+          throw new IndexOutOfBoundsException
+            ("fra(" + fra + ") er negativ!");
+
+        if (til > antall)                          // til er utenfor tabellen
+          throw new IndexOutOfBoundsException
+            ("til(" + til + ") > antall(" + antall + ")");
+
+        if (fra > til)                                // fra er større enn til
+          throw new IllegalArgumentException
+            ("fra(" + fra + ") > til(" + til + ") - illegalt intervall!");
+      }
+
+
     // subliste
     public Liste<T> subliste(int fra, int til)
     {
-        throw new UnsupportedOperationException("Ikke laget ennå!");
+        endringer = 0;
+        fratilKontroll(antall,fra,til);
+
+        DobbeltLenketListe<T> subliste = new DobbeltLenketListe<>();
+
+
+        for (int i = fra; i < til ; i++) {
+             subliste.leggInn(hent(i));
+        }
+
+
+
+
+        return  subliste;
     }
 
     @Override
@@ -179,7 +209,8 @@ public class DobbeltLenketListe<T> implements Liste<T>
     @Override
     public boolean inneholder(T verdi)
     {
-        throw new UnsupportedOperationException("Ikke laget ennå!");
+        if(indeksTil(verdi) == -1) return false;
+        return true;
     }
 
     @Override
@@ -192,15 +223,12 @@ public class DobbeltLenketListe<T> implements Liste<T>
     @Override
     public int indeksTil(T verdi)
     {
-        throw new UnsupportedOperationException("Ikke laget ennå!");
-
-        /*
-        for (int i = 0; i < antall; i++)
-       {
-            if (a[i].equals(verdi)) return i;   // funnet!
-         }
-             return -1;   // ikke funnet!
-         */
+        for (int i = 0; i < antall ; i++) {
+            if(hent(i).equals(verdi)) {
+                return i;
+            }
+        }
+        return -1;
     }
 
     @Override
