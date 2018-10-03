@@ -26,8 +26,8 @@ public class Oblig2Test {
         antallFeil += oppgave2();
         antallFeil += oppgave3();
         antallFeil += oppgave4();
-        //antallFeil += oppgave5();
-        //antallFeil += oppgave6();
+        antallFeil += oppgave5();
+        antallFeil += oppgave6();
         //antallFeil += oppgave7();
         //antallFeil += oppgave8();
         //antallFeil += oppgave9();
@@ -679,12 +679,10 @@ public class Oblig2Test {
             System.out.println(
                     "Oppgave 5h: Feil i antall-oppdateringen i metoden leggInn()!");
         }
-
         if (!liste.toString().equals("[1, 2, 3, 4, 5, 6, 7]")) {
             antallFeil++;
             System.out.println("Oppgave 5i: Feil i metoden leggInn()!");
         }
-
         if (!liste.omvendtString().equals("[7, 6, 5, 4, 3, 2, 1]")) {
             antallFeil++;
             System.out.println("Oppgave 5j: Feil i metoden leggInn()!");

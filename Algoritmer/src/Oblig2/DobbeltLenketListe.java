@@ -161,7 +161,7 @@ public class DobbeltLenketListe<T> implements Liste<T>
     @Override
     public boolean leggInn(T verdi)
     {
-        Objects.requireNonNull(verdi,"Verdien kan ikke være Null"); // Sjekker om verdien er null
+        Objects.requireNonNull(verdi,"Verdien kan ikke være Null"); // Sjekker om tabellen bare har null verdider
 
         //Sjekker om Listen er tom, og gjør den første verdi til: node = hale = hode;
         if(tom()){
@@ -183,28 +183,72 @@ public class DobbeltLenketListe<T> implements Liste<T>
     @Override
     public void leggInn(int indeks, T verdi)
     {
-        throw new UnsupportedOperationException("Ikke laget ennå!");
+        Objects.requireNonNull(verdi,"Verdien kan ikke være Null"); // Sjekker om tabellen bare har null verdider
+        if(indeks < 0 || indeks > antall) {
+            throw new IndexOutOfBoundsException("Indeksen er ute av intervallet");
+        }
+        if(verdi == null){
+            throw new NullPointerException("Verdien kan ikke være Null");
+        }
+           Node<T> node; //Oppretter node
 
 
+        if(antall == 0){
+            node = new Node<>(verdi,null, null);
+            hode = hale = node;
+            antall++;
+            endringer++;
 
+        }else if(tom() || indeks >=antall){
+            leggInn(verdi);
+        }
+        else if(indeks == 0){
+            node = new Node<>(verdi,null, hode);
+            hode.forrige = node;
+            hode = node;
+            antall++;
+            endringer++;
+        }else{
+            Node<T> gammelNode = finnNode(indeks);
+            node = new Node<>(verdi,gammelNode.forrige,gammelNode);
 
-        /*
-        if (verdi == null) throw new
-                IllegalArgumentException("Ulovlig å legge inn null-verdier!");
+            if(gammelNode.equals(hale)){
+                hale.forrige = node;
+            } else{
+                gammelNode.forrige = node;
+            }
+            node.forrige.neste = node; //
 
-        if (indeks < 0 || indeks > antall) throw new
-                IndexOutOfBoundsException("Indeks " + indeks + " er ulovlig!");
+            antall++;
+            endringer++;
+        }
 
-        // En full tabell utvides med 50%
-        if (antall == a.length) a = Arrays.copyOf(a,(3*antall)/2 + 1);
+      /*
+          //Sjekker om Listen er tom, og gjør den første verdi til: node = hale = hode;
+          if(tom()) {
+              node = new Node<>(verdi, null, null);
+              hale = hode = node;
+              antall++;
+          }else if(indeks == 0){ //legger in først
+              node = new Node<>(verdi,null, finnNode(indeks+1));
+              hode.forrige = node;
+              hode = node;
+              antall++;
+          }else if(indeks == antall-1){  //legger til bakerst
+              node = new Node<>(verdi, hale,null);
+              hale.neste = node;
+              hale = node;
+              antall++;
+          }else{ //Legger til mellom
+              node = new Node<>(verdi,finnNode(indeks-1),finnNode(indeks+1));
+              finnNode(indeks-1).neste = node;
+              finnNode(indeks+1).forrige = node;
+              antall++;
+              endringer++;
+          }
+            */
+        }
 
-        // rydder plass til den nye verdien
-        for (int i = antall; i > indeks; i--) a[i] = a[i-1];
-        verdi[indeks] = verdi;     // setter inn ny verdi
-
-        antall++;
-        */
-    }
 
     @Override
     public boolean inneholder(T verdi)
@@ -251,13 +295,53 @@ public class DobbeltLenketListe<T> implements Liste<T>
     @Override
     public boolean fjern(T verdi)
     {
-        throw new UnsupportedOperationException("Ikke laget ennå!");
+        int indeks = indeksTil(verdi);
+        fjern(indeks);
+        return true;
     }
 
     @Override
     public T fjern(int indeks)
     {
-        throw new UnsupportedOperationException("Ikke laget ennå!");
+        if(!tom()) {
+
+            indeksKontroll(indeks, false);
+
+            Node<T> node = finnNode(indeks);
+            T verdi = hent(indeks);
+
+
+            if(antall == 2){
+                if(indeks == antall-1){
+                    hale = hode = node.forrige;
+                    hode.forrige=null;
+                    hode.neste=null;
+                }else{
+                    hale = hode = node.neste;
+                    hode.forrige=null;
+                    hode.neste=null;
+                }
+
+            }
+            else if (indeks == 0) {
+                hode = node.neste;
+                node.neste.forrige = null;
+                antall--;
+                endringer++;
+            } else if (indeks == antall - 1) {
+                node.forrige = hale;
+                node.forrige.neste = null;
+                antall--;
+                endringer++;
+            } else {
+                node.forrige.neste = node.neste;
+                node.neste.forrige = node.forrige;
+                antall--;
+                endringer++;
+            }
+            return verdi;
+        }
+        return null;
     }
 
     @Override
