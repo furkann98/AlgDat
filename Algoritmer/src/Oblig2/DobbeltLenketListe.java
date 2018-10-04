@@ -168,12 +168,14 @@ public class DobbeltLenketListe<T> implements Liste<T>
             Node<T> node = new Node<>(verdi, null,null);
             hale = hode = node;
             antall++;
+            endringer++;
             return true;
         }else{ //Legger til bakerst
             Node<T> node = new Node<>(verdi, hale,null);
             hale.neste = node;
             hale = node;
             antall++;
+            endringer++;
             return true;
         }
 
@@ -211,42 +213,11 @@ public class DobbeltLenketListe<T> implements Liste<T>
         }else{
             Node<T> gammelNode = finnNode(indeks);
             node = new Node<>(verdi,gammelNode.forrige,gammelNode);
-
-            if(gammelNode.equals(hale)){
-                hale.forrige = node;
-            } else{
-                gammelNode.forrige = node;
-            }
+            gammelNode.forrige = node;
             node.forrige.neste = node; //
-
             antall++;
             endringer++;
         }
-
-      /*
-          //Sjekker om Listen er tom, og gjør den første verdi til: node = hale = hode;
-          if(tom()) {
-              node = new Node<>(verdi, null, null);
-              hale = hode = node;
-              antall++;
-          }else if(indeks == 0){ //legger in først
-              node = new Node<>(verdi,null, finnNode(indeks+1));
-              hode.forrige = node;
-              hode = node;
-              antall++;
-          }else if(indeks == antall-1){  //legger til bakerst
-              node = new Node<>(verdi, hale,null);
-              hale.neste = node;
-              hale = node;
-              antall++;
-          }else{ //Legger til mellom
-              node = new Node<>(verdi,finnNode(indeks-1),finnNode(indeks+1));
-              finnNode(indeks-1).neste = node;
-              finnNode(indeks+1).forrige = node;
-              antall++;
-              endringer++;
-          }
-            */
         }
 
 
@@ -295,14 +266,70 @@ public class DobbeltLenketListe<T> implements Liste<T>
     @Override
     public boolean fjern(T verdi)
     {
-        int indeks = indeksTil(verdi);
-        fjern(indeks);
-        return true;
+        Node<T> node = hode;
+
+        for (int i = 0; i < antall; i++ ){
+            if(node.verdi == verdi){
+                fjern(i);
+                return true;
+            }
+        }
+
+        return false;
     }
 
     @Override
     public T fjern(int indeks)
     {
+
+          indeksKontroll(indeks,false);
+
+          if(tom()) return null;
+
+          Node<T> node;
+          T verdi;
+
+          if(indeks == 0){
+              if(antall == 2){
+                  hode = hale;
+                  hale.neste = null;
+                  hode.forrige = null;
+
+
+              }else {
+                  node = hode.neste;
+                  node.forrige = null;
+                  hode = node;
+              }
+              verdi = hode.verdi;
+              antall--;
+              endringer++;
+          }
+          else if(indeks == antall-1){
+
+              if(antall == 2){
+                   hale = hode;
+                   hale.neste = null;
+                   hode.forrige = null;
+              }else{
+                  node = hale.forrige;
+                  node.neste = null;
+                  hale = node;
+              }
+              verdi = hale.verdi;
+              antall--;
+              endringer++;
+          }
+          else {
+              node = finnNode(indeks);
+              verdi = node.verdi;
+              node.neste.forrige = node.forrige;
+              node.forrige.neste = node.neste;
+              antall--;
+              endringer++;
+          }
+          return verdi;
+     /*
         if(!tom()) {
 
             indeksKontroll(indeks, false);
@@ -342,6 +369,7 @@ public class DobbeltLenketListe<T> implements Liste<T>
             return verdi;
         }
         return null;
+        */
     }
 
     @Override
