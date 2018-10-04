@@ -266,16 +266,20 @@ public class DobbeltLenketListe<T> implements Liste<T>
     @Override
     public boolean fjern(T verdi)
     {
+        if(verdi == null) return false;
         Node<T> node = hode;
 
         for (int i = 0; i < antall; i++ ){
-            if(node.verdi == verdi){
+
+            if(node.verdi.equals(verdi)){
                 fjern(i);
                 return true;
             }
+            node = node.neste;
         }
 
         return false;
+
     }
 
     @Override
@@ -289,13 +293,20 @@ public class DobbeltLenketListe<T> implements Liste<T>
           Node<T> node;
           T verdi;
 
+
+          if(antall == 1){
+              verdi = hode.verdi;
+              hode = hale = null;
+              antall--;
+              return verdi;
+
+          }
+
           if(indeks == 0){
               if(antall == 2){
                   hode = hale;
                   hale.neste = null;
                   hode.forrige = null;
-
-
               }else {
                   node = hode.neste;
                   node.forrige = null;
@@ -329,47 +340,7 @@ public class DobbeltLenketListe<T> implements Liste<T>
               endringer++;
           }
           return verdi;
-     /*
-        if(!tom()) {
 
-            indeksKontroll(indeks, false);
-
-            Node<T> node = finnNode(indeks);
-            T verdi = hent(indeks);
-
-
-            if(antall == 2){
-                if(indeks == antall-1){
-                    hale = hode = node.forrige;
-                    hode.forrige=null;
-                    hode.neste=null;
-                }else{
-                    hale = hode = node.neste;
-                    hode.forrige=null;
-                    hode.neste=null;
-                }
-
-            }
-            else if (indeks == 0) {
-                hode = node.neste;
-                node.neste.forrige = null;
-                antall--;
-                endringer++;
-            } else if (indeks == antall - 1) {
-                node.forrige = hale;
-                node.forrige.neste = null;
-                antall--;
-                endringer++;
-            } else {
-                node.forrige.neste = node.neste;
-                node.neste.forrige = node.forrige;
-                antall--;
-                endringer++;
-            }
-            return verdi;
-        }
-        return null;
-        */
     }
 
     @Override

@@ -15,18 +15,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DobbeltLenketListe.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DobbeltLenketListe.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Oblig2/DobbeltLenketListe.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="273" column="28" lean-forward="false" selection-start-line="273" selection-start-column="28" selection-end-line="273" selection-end-column="28" />
+            <state relative-caret-position="57">
+              <caret line="267" column="5" lean-forward="false" selection-start-line="267" selection-start-column="5" selection-end-line="267" selection-end-column="5" />
               <folding>
                 <element signature="e#3796#3797#0" expanded="true" />
                 <element signature="e#3868#3869#0" expanded="true" />
-                <element signature="e#10818#10819#0" expanded="true" />
-                <element signature="e#10893#10894#0" expanded="true" />
-                <element signature="e#10944#10945#0" expanded="true" />
-                <element signature="e#11019#11020#0" expanded="true" />
+                <element signature="e#9920#9921#0" expanded="true" />
+                <element signature="e#9995#9996#0" expanded="true" />
+                <element signature="e#10046#10047#0" expanded="true" />
+                <element signature="e#10121#10122#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -42,11 +42,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Oblig2Test.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Oblig2Test.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Oblig2/Oblig2Test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="159">
-              <caret line="29" column="8" lean-forward="false" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
+            <state relative-caret-position="384">
+              <caret line="963" column="36" lean-forward="false" selection-start-line="963" selection-start-column="36" selection-end-line="963" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -88,6 +88,8 @@
       <find>finnno</find>
       <find>hent</find>
       <find>legg</find>
+      <find>oppdater</find>
+      <find>equals</find>
     </findStrings>
   </component>
   <component name="GradleLocalSettings">
@@ -106,8 +108,8 @@
         <option value="$PROJECT_DIR$/src/Oblig2/Beholder.java" />
         <option value="$PROJECT_DIR$/src/Oblig2/Liste.java" />
         <option value="$PROJECT_DIR$/src/Oblig2/MainOblig2.java" />
-        <option value="$PROJECT_DIR$/src/Oblig2/Oblig2Test.java" />
         <option value="$PROJECT_DIR$/src/Oblig2/DobbeltLenketListe.java" />
+        <option value="$PROJECT_DIR$/src/Oblig2/Oblig2Test.java" />
       </list>
     </option>
   </component>
@@ -343,12 +345,12 @@
       <workItem from="1536060810825" duration="36602000" />
       <workItem from="1537256270380" duration="529000" />
       <workItem from="1538044755206" duration="7388000" />
-      <workItem from="1538476417629" duration="25592000" />
+      <workItem from="1538476417629" duration="27494000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="91329000" />
+    <option name="totallyTimeSpent" value="93231000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="685" height="900" extended-state="6" />
@@ -361,7 +363,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24425635" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24425635" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18240343" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -673,14 +675,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Oblig2/Beholder.java" />
-    <entry file="file://$PROJECT_DIR$/src/Oblig2/Oblig2Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="29" column="8" lean-forward="false" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Oblig2/Liste.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -691,16 +685,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Oblig2/DobbeltLenketListe.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="273" column="28" lean-forward="false" selection-start-line="273" selection-start-column="28" selection-end-line="273" selection-end-column="28" />
+        <state relative-caret-position="57">
+          <caret line="267" column="5" lean-forward="false" selection-start-line="267" selection-start-column="5" selection-end-line="267" selection-end-column="5" />
           <folding>
             <element signature="e#3796#3797#0" expanded="true" />
             <element signature="e#3868#3869#0" expanded="true" />
-            <element signature="e#10818#10819#0" expanded="true" />
-            <element signature="e#10893#10894#0" expanded="true" />
-            <element signature="e#10944#10945#0" expanded="true" />
-            <element signature="e#11019#11020#0" expanded="true" />
+            <element signature="e#9920#9921#0" expanded="true" />
+            <element signature="e#9995#9996#0" expanded="true" />
+            <element signature="e#10046#10047#0" expanded="true" />
+            <element signature="e#10121#10122#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Oblig2/Oblig2Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="963" column="36" lean-forward="false" selection-start-line="963" selection-start-column="36" selection-end-line="963" selection-end-column="36" />
+          <folding />
         </state>
       </provider>
     </entry>
