@@ -34,6 +34,14 @@ class Main {
         for(String s : liste) System.out.print(s + " ");
 
 
+
+        DobbeltLenketListe<String> liste2 =new DobbeltLenketListe<>(new String[]{"Birger","Lars","Anders","Bodil","Kari","Per","Berit"});
+        liste2.fjernHvis(navn2 -> navn2.charAt(0) == 'B');
+        // fjerner navn som starter med B
+        System.out.println();
+        System.out.println(liste2 + " "+ liste2.omvendtString());
+
+
     }
 
 
@@ -522,29 +530,35 @@ public class DobbeltLenketListe<T> implements Liste<T>
         {
 
 
-            if(endringer!= iteratorendringer){
-                throw new ConcurrentModificationException("Daaamn");
+            if(iteratorendringer!= endringer){
+                throw new ConcurrentModificationException();
             }
-            if (fjernOK = false) {
-                throw new  IllegalStateException("Hussi");
+            if (fjernOK == false) {
+                throw new  IllegalStateException();
             }
 
+            
 
-            Node<T> node = hode;
 
-            fjernOK = false;
 
             if(antall == 1){
                 hode = hale = null;
             }else if(denne == null){
-                hale.forrige = null;
+                hale = hale.forrige;
+                hale.neste = null;
             }else if(denne.forrige == hode){
                 hode = hode.neste;
                 hode.forrige = null; 
+            }else{
+                denne.forrige.forrige.neste = denne;
+                denne.forrige = denne.forrige.forrige;
             }
 
 
-
+            fjernOK = false;
+            antall--;
+            endringer++;
+            iteratorendringer++;
 
 
 
