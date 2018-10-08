@@ -26,7 +26,7 @@ class Main {
         tid = System.currentTimeMillis()-tid;
         System.out.println(tid); */
 
-
+        /*
         String[] navn = {"Lars","Anders","Bodil","Kari","Per","Berit"};
         Liste<String> liste = new DobbeltLenketListe<>(navn);
         liste.forEach(s -> System.out.print(s + " "));
@@ -41,7 +41,22 @@ class Main {
         System.out.println();
         System.out.println(liste2 + " "+ liste2.omvendtString());
 
+        */
+        String[] navn = {"Lars","Anders","Bodil","Kari","Per","Berit"};
+        Liste<String> liste1 = new DobbeltLenketListe<>(navn);
+        Liste<String> liste2 = new TabellListe<>(navn);
+        Liste<String> liste3 = new EnkeltLenketListe<>(navn);
+        DobbeltLenketListe.sorter(liste1, Comparator.naturalOrder());
+        DobbeltLenketListe.sorter(liste2, Comparator.naturalOrder());
+        DobbeltLenketListe.sorter(liste3, Comparator.naturalOrder());
 
+            System.out.println(liste1);  // [Anders, Berit, Bodil, Kari, Lars, Per]
+            System.out.println(liste2);  // [Anders, Berit, Bodil, Kari, Lars, Per]
+            System.out.println(liste3);  // [Anders, Berit, Bodil, Kari, Lars, Per]
+
+        // Tabellen navn er upåvirket:
+            System.out.println(Arrays.toString(navn));
+        // [Lars, Anders, Bodil, Kari, Per, Berit]
     }
 
 
@@ -156,8 +171,6 @@ public class DobbeltLenketListe<T> implements Liste<T>
         }
 
 
-
-
         return  subliste;
     }
 
@@ -165,15 +178,6 @@ public class DobbeltLenketListe<T> implements Liste<T>
     public int antall()
     {
         return antall;
-
-        /*
-                 public int antall(){
-                    int antall = 0;
-                    for (T t : this) antall++;   // bruker en forAlle-løkke
-                    return antall;
-                  }
-
-        */
     }
 
     @Override
@@ -203,7 +207,6 @@ public class DobbeltLenketListe<T> implements Liste<T>
             return true;
         }
 
-        //throw new UnsupportedOperationException("Ikke laget ennå!");
     }
 
     @Override
@@ -447,9 +450,28 @@ public class DobbeltLenketListe<T> implements Liste<T>
         return sb.toString();
     }
 
+
+    //OPPGAVE 10
     public static <T> void sorter(Liste<T> liste, Comparator<? super T> c)
     {
-        throw new UnsupportedOperationException("Ikke laget ennå!");
+
+        int antall = liste.antall();
+        T temp;
+
+        boolean isComplete = false;
+
+        for(int i = 0; i< antall -1; i++){
+            if(c.compare(liste.hent(i), liste.hent(i+1)) > 0){ // sammenligner om tallene er større enn null
+               isComplete = true;
+                temp = liste.hent(i); //tar vare op første variabel
+
+                liste.oppdater(i, liste.hent(i+1));        //indeks, verdi
+                liste.oppdater(i+1, temp);                // indeks, verdi
+            }
+        }
+        //Sjekker om lista er ferdig sortert
+        if(isComplete){sorter(liste, c);}
+        //Hvis ikke så sorterer lista på nytt. kaller på metoden rekursivt.
     }
 
     @Override
@@ -464,7 +486,6 @@ public class DobbeltLenketListe<T> implements Liste<T>
        DobbeltLenketListeIterator hussi = new  DobbeltLenketListeIterator(indeks);
        return hussi;
 
-        //throw new UnsupportedOperationException("Ikke laget ennå!");
     }
 
     private class DobbeltLenketListeIterator implements Iterator<T>
@@ -482,17 +503,10 @@ public class DobbeltLenketListe<T> implements Liste<T>
 
         private DobbeltLenketListeIterator(int indeks)
         {
-
-
             denne = finnNode(indeks);
             fjernOK = false;
             iteratorendringer = endringer;  // teller endringer
 
-
-
-
-
-            //throw new UnsupportedOperationException("Ikke laget ennå!");
         }
 
         @Override
@@ -504,9 +518,6 @@ public class DobbeltLenketListe<T> implements Liste<T>
         @Override
         public T next()
         {
-
-
-
             //A
             if(iteratorendringer != endringer){
                 throw new ConcurrentModificationException("Ulik endringer");
@@ -521,14 +532,11 @@ public class DobbeltLenketListe<T> implements Liste<T>
             return temp;           // Returnerer original verdi
 
 
-
-
         }
 
         @Override
         public void remove()
         {
-
 
             if(iteratorendringer!= endringer){
                 throw new ConcurrentModificationException();
@@ -536,8 +544,6 @@ public class DobbeltLenketListe<T> implements Liste<T>
             if (fjernOK == false) {
                 throw new  IllegalStateException();
             }
-
-            
 
 
 
@@ -562,30 +568,7 @@ public class DobbeltLenketListe<T> implements Liste<T>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
          // verdien som lå lengst til høyre nulles
-
-
-
-
 
 
         }
