@@ -15,10 +15,16 @@ class Main {
     public static void main(String[] args) {
 
         DobbeltLenketListe<Integer> liste = new DobbeltLenketListe<>();
-        System.out.println(liste.toString() + ""+ liste.omvendtString());
-        for(int i = 1; i <= 3; i++){liste.leggInn(i);
-            System.out.println(liste.toString() + ""+ liste.omvendtString());
+        for (int i = 0; i < 100000 ; i++) {
+            liste.leggInn(i);
         }
+
+        long tid = System.currentTimeMillis();
+        for (int i = 0; i < 100000 ; i++) {
+            liste.nullstill();
+        }
+        tid = System.currentTimeMillis()-tid;
+        System.out.println(tid);
     }
 
 }
@@ -357,28 +363,31 @@ public class DobbeltLenketListe<T> implements Liste<T>
     @Override
     public void nullstill()
     {
-
+/*
+        //Tregere metode
         Node<T> node = hode;
 
-        
+        for (int i = 0; i < antall-1 ; i++) {
+            node = node.neste;
+            node.forrige.neste = null;
+            node.forrige.verdi = null;
+            endringer ++;
+        }
+        hode = hale = null;
+        antall=0;
 
-        /*
-         public int antall(){
-            int antall = 0;
-            for (T t : this) antall++;   // bruker en forAlle-løkke
-            return antall;
-          }
+*/
 
-        */
-
-        /*
-
-        hode = null;
-        hale = null;
+        //Mye raskeere metode
+        while(hode != null){
+            fjern(0);
+            endringer++;
+        }
         antall = 0;
-        antallEndringer++;
-         */
-        throw new UnsupportedOperationException("Ikke laget ennå!");
+
+
+
+
     }
 
     @Override
@@ -463,6 +472,11 @@ public class DobbeltLenketListe<T> implements Liste<T>
         @Override
         public T next()
         {
+
+
+
+
+
             throw new UnsupportedOperationException("Ikke laget ennå!");
             /*
          if (!hasNext()){
