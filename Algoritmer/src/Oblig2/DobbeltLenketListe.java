@@ -14,7 +14,7 @@ import java.util.*;
 class Main {
     public static void main(String[] args) {
 
-        DobbeltLenketListe<Integer> liste = new DobbeltLenketListe<>();
+       /* DobbeltLenketListe<Integer> liste = new DobbeltLenketListe<>();
         for (int i = 0; i < 100000 ; i++) {
             liste.leggInn(i);
         }
@@ -24,8 +24,18 @@ class Main {
             liste.nullstill();
         }
         tid = System.currentTimeMillis()-tid;
-        System.out.println(tid);
+        System.out.println(tid); */
+
+
+        String[] navn = {"Lars","Anders","Bodil","Kari","Per","Berit"};
+        Liste<String> liste = new DobbeltLenketListe<>(navn);
+        liste.forEach(s -> System.out.print(s + " "));
+        System.out.println();
+        for(String s : liste) System.out.print(s + " ");
+
+
     }
+
 
 }
 
@@ -437,12 +447,16 @@ public class DobbeltLenketListe<T> implements Liste<T>
     @Override
     public Iterator<T> iterator()
     {
-        throw new UnsupportedOperationException("Ikke laget ennå!");
+        return new DobbeltLenketListeIterator();
     }
 
     public Iterator<T> iterator(int indeks)
     {
-        throw new UnsupportedOperationException("Ikke laget ennå!");
+        indeksKontroll(indeks, false);
+       DobbeltLenketListeIterator hussi = new  DobbeltLenketListeIterator(indeks);
+       return hussi;
+
+        //throw new UnsupportedOperationException("Ikke laget ennå!");
     }
 
     private class DobbeltLenketListeIterator implements Iterator<T>
@@ -460,7 +474,17 @@ public class DobbeltLenketListe<T> implements Liste<T>
 
         private DobbeltLenketListeIterator(int indeks)
         {
-            throw new UnsupportedOperationException("Ikke laget ennå!");
+
+
+            denne = finnNode(indeks);
+            fjernOK = false;
+            iteratorendringer = endringer;  // teller endringer
+
+
+
+
+
+            //throw new UnsupportedOperationException("Ikke laget ennå!");
         }
 
         @Override
@@ -475,47 +499,77 @@ public class DobbeltLenketListe<T> implements Liste<T>
 
 
 
+            //A
+            if(iteratorendringer != endringer){
+                throw new ConcurrentModificationException("Ulik endringer");
+            }
+
+            if(!hasNext()){
+                throw new NoSuchElementException("Ikke true");
+            }
+            fjernOK = true;
+            T temp = denne.verdi; //Peker på samme verdi, som nåværende node
+            denne = denne.neste; // Oppdaterer node
+            return temp;           // Returnerer original verdi
 
 
-            throw new UnsupportedOperationException("Ikke laget ennå!");
-            /*
-         if (!hasNext()){
-         throw new NoSuchElementException("Tomt eller ingen verdier igjen!");
-         }
 
 
-          T temp = a[denne];         // henter aktuell verdi
-          denne++;                   // flytter indeksen
-          removeOK = true;           // nå kan remove() kalles
-          return temp;
-          */
         }
 
         @Override
         public void remove()
         {
-            throw new UnsupportedOperationException("Ikke laget ennå!");
 
-            /*
-               if (!removeOK) {throw new IllegalStateException("Ulovlig tilstand!");}
 
-              removeOK = false;          // remove() kan ikke kalles på nytt
+            if(endringer!= iteratorendringer){
+                throw new ConcurrentModificationException("Daaamn");
+            }
+            if (fjernOK = false) {
+                throw new  IllegalStateException("Hussi");
+            }
 
-              // verdien i posisjon denne - 1 skal fjernes siden den ble returnert
-              // i det siste kallet på next(), verdiene fra og med denne flyttes
-              // derfor en enhet mot venstre
 
-              antall--;           // en verdi vil bli fjernet
-              denne--;            // denne må flyttes til venstre
+            Node<T> node = hode;
 
-              for (int i = denne; i < antall; i++)
-              {
-                a[i] = a[i+1];    // verdiene flyttes
-              }
+            fjernOK = false;
 
-              a[antall] = null;   // verdien som lå lengst til høyre nulles
-             }
-                     */
+            if(antall == 1){
+                hode = hale = null;
+            }else if(denne == null){
+                hale.forrige = null;
+            }else if(denne.forrige == hode){
+                hode = hode.neste;
+                hode.forrige = null; 
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         // verdien som lå lengst til høyre nulles
+
+
 
 
 
