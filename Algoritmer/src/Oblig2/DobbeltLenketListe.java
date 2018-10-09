@@ -42,7 +42,7 @@ class Main {
         System.out.println(liste2 + " "+ liste2.omvendtString());
 
         */
-        String[] navn = {"Lars","Anders","Bodil","Kari","Per","Berit"};
+       /* String[] navn = {"Lars","Anders","Bodil","Kari","Per","Berit"};
         Liste<String> liste1 = new DobbeltLenketListe<>(navn);
         Liste<String> liste2 = new TabellListe<>(navn);
         Liste<String> liste3 = new EnkeltLenketListe<>(navn);
@@ -57,6 +57,23 @@ class Main {
         // Tabellen navn er upåvirket:
             System.out.println(Arrays.toString(navn));
         // [Lars, Anders, Bodil, Kari, Per, Berit]
+*/
+
+        String[] s1 = {}, s2 = {"A"}, s3 = {null,"A",null,"B",null};
+        DobbeltLenketListe<String> l1 = new DobbeltLenketListe<>(s1);
+        DobbeltLenketListe<String> l2 = new DobbeltLenketListe<>(s2);
+        DobbeltLenketListe<String> l3 = new DobbeltLenketListe<>(s3);
+        System.out.println(l1.toString() + " "+ l2.toString()+ " "+ l3.toString() + " "+ l1.omvendtString() + " "+ l2.omvendtString() + " "+ l3.omvendtString());
+
+
+
+
+
+
+
+
+
+
     }
 
 
@@ -406,13 +423,10 @@ public class DobbeltLenketListe<T> implements Liste<T>
         }
         antall = 0;
 
-
-
-
     }
 
     @Override
-    public String toString()
+    public String toString()    //Oppgave 2 går for sakte, men tror jeg har gjort d riktig
     {
         StringBuilder sb  = new StringBuilder();
         sb.append("[");
@@ -451,7 +465,7 @@ public class DobbeltLenketListe<T> implements Liste<T>
     }
 
 
-    
+
     public static <T> void sorter(Liste<T> liste, Comparator<? super T> c)
     {
 
