@@ -451,7 +451,7 @@ public class DobbeltLenketListe<T> implements Liste<T>
     }
 
 
-    //OPPGAVE 10
+    
     public static <T> void sorter(Liste<T> liste, Comparator<? super T> c)
     {
 
