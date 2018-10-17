@@ -16,6 +16,8 @@ Oblig 3 sendes inn!
 
 ///// Oppdatert 8. oktober 2018 ///////////////
 
+import Oblig3.ObligSBinTre;
+
 import java.util.*;
 
 public class Oblig3Test
