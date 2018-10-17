@@ -46,7 +46,7 @@ public class Oblig2Test {
 
     public static int oppgave1() {
         int antallFeil = 0;
-        Liste<Integer> liste = new DobbeltLenketListe<>();
+        Liste<Integer> liste = new Beholder.DobbeltLenketListe<>();
 
         if (liste.antall() != 0) {
             antallFeil++;
@@ -59,7 +59,7 @@ public class Oblig2Test {
         }
 
         try {
-            liste = new DobbeltLenketListe<>(null);
+            liste = new Beholder.DobbeltLenketListe<>(null);
             antallFeil++;
             System.out.println("Oppgave 1c: Det skal kastes en NullPointerExcepiton her!");
         } catch (Exception e) {
@@ -70,7 +70,7 @@ public class Oblig2Test {
             }
         }
 
-        liste = new DobbeltLenketListe<>(new Integer[]{});
+        liste = new Beholder.DobbeltLenketListe<>(new Integer[]{});
 
         if (liste.antall() != 0) {
             antallFeil++;
@@ -82,7 +82,7 @@ public class Oblig2Test {
             System.out.println("Oppgave 1f: Feil i konstruktøren!");
         }
 
-        liste = new DobbeltLenketListe<>(new Integer[]{1});
+        liste = new Beholder.DobbeltLenketListe<>(new Integer[]{1});
 
         if (liste.antall() != 1) {
             antallFeil++;
@@ -94,14 +94,14 @@ public class Oblig2Test {
             System.out.println("Oppgave 1h: Feil i konstruktøren!");
         }
 
-        liste = new DobbeltLenketListe<>(new Integer[]{1, 2});
+        liste = new Beholder.DobbeltLenketListe<>(new Integer[]{1, 2});
 
         if (liste.antall() != 2) {
             antallFeil++;
             System.out.println("Oppgave 1i: Feil i konstruktøren!");
         }
 
-        liste = new DobbeltLenketListe<>(new Integer[]{1, 2, 3});
+        liste = new Beholder.DobbeltLenketListe<>(new Integer[]{1, 2, 3});
 
         if (liste.antall() != 3) {
             antallFeil++;
@@ -110,49 +110,49 @@ public class Oblig2Test {
 
         Integer[] a = {1, 2, 3, 4, 5};
         Integer[] b = {1, 2, 3, 4, 5};
-        liste = new DobbeltLenketListe<>(a);
+        liste = new Beholder.DobbeltLenketListe<>(a);
 
         if (!Arrays.equals(a, b)) {
             antallFeil++;
             System.out.println("Oppgave 1k: Konstruktøren endrer parametertabellen!");
         }
 
-        liste = new DobbeltLenketListe<>(new Integer[]{null});
+        liste = new Beholder.DobbeltLenketListe<>(new Integer[]{null});
 
         if (liste.antall() != 0) {
             antallFeil++;
             System.out.println("Oppgave 1l: Feil i konstruktøren!");
         }
 
-        liste = new DobbeltLenketListe<>(new Integer[]{null, null});
+        liste = new Beholder.DobbeltLenketListe<>(new Integer[]{null, null});
 
         if (liste.antall() != 0) {
             antallFeil++;
             System.out.println("Oppgave 1m: Feil i konstruktøren!");
         }
 
-        liste = new DobbeltLenketListe<>(new Integer[]{null, null});
+        liste = new Beholder.DobbeltLenketListe<>(new Integer[]{null, null});
 
         if (liste.antall() != 0) {
             antallFeil++;
             System.out.println("Oppgave 1n: Feil i konstruktøren!");
         }
 
-        liste = new DobbeltLenketListe<>(new Integer[]{null, 1, null});
+        liste = new Beholder.DobbeltLenketListe<>(new Integer[]{null, 1, null});
 
         if (liste.antall() != 1) {
             antallFeil++;
             System.out.println("Oppgave 1o: Feil i konstruktøren!");
         }
 
-        liste = new DobbeltLenketListe<>(new Integer[]{null, 1, null, 2, null, 3, null});
+        liste = new Beholder.DobbeltLenketListe<>(new Integer[]{null, 1, null, 2, null, 3, null});
 
         if (liste.antall() != 3) {
             antallFeil++;
             System.out.println("Oppgave 1p: Feil i konstruktøren!");
         }
 
-        class Test<T> extends DobbeltLenketListe<T> {
+        class Test<T> extends Beholder.DobbeltLenketListe<T> {
             public boolean leggInn(T verdi) {
                 super.leggInn(verdi);
                 super.leggInn(verdi);
@@ -181,7 +181,7 @@ public class Oblig2Test {
     public static int oppgave2() {
         int antallFeil = 0;
 
-        DobbeltLenketListe<Integer> liste = new DobbeltLenketListe<>();
+        Beholder.DobbeltLenketListe<Integer> liste = new Beholder.DobbeltLenketListe<>();
 
         if (liste.leggInn(1) != true) {
             antallFeil++;
@@ -209,7 +209,7 @@ public class Oblig2Test {
             }
         }
 
-        liste = new DobbeltLenketListe<>();
+        liste = new Beholder.DobbeltLenketListe<>();
 
         if (!liste.toString().equals("[]")) {
             antallFeil++;
@@ -271,7 +271,7 @@ public class Oblig2Test {
                     ("Oppgave 2l: Du har " + s + ", skal være [4, 3, 2, 1]!");
         }
 
-        liste = new DobbeltLenketListe<>(new Integer[]{null});
+        liste = new Beholder.DobbeltLenketListe<>(new Integer[]{null});
         String t1 = "[]", t2 = liste.toString();
 
         if (!t1.equals(t2)) {
@@ -280,7 +280,7 @@ public class Oblig2Test {
                     ("Oppgave 2m: Du har " + t2 + ", men det skal være " + t1);
         }
 
-        liste = new DobbeltLenketListe<>(new Integer[]{null, 1, null, 2, null});
+        liste = new Beholder.DobbeltLenketListe<>(new Integer[]{null, 1, null, 2, null});
         t1 = "[1, 2]";
         t2 = liste.toString();
 
@@ -309,7 +309,7 @@ public class Oblig2Test {
     public static int oppgave3() {
         int antallFeil = 0;
 
-        Liste<Integer> testliste = new DobbeltLenketListe<>();
+        Liste<Integer> testliste = new Beholder.DobbeltLenketListe<>();
         for (int i = 0; i < 100000; i++) testliste.leggInn(i);
         long tid = System.currentTimeMillis();
         for (int i = 0; i < 10000; i++) testliste.hent(99999);
@@ -321,7 +321,7 @@ public class Oblig2Test {
             System.out.println("            Har du kodet metoden finnNode() riktig?");
         }
 
-        DobbeltLenketListe<Integer> liste = new DobbeltLenketListe<>();
+        Beholder.DobbeltLenketListe<Integer> liste = new Beholder.DobbeltLenketListe<>();
 
         try {
             liste.hent(0);
@@ -443,7 +443,7 @@ public class Oblig2Test {
         }
 
         Integer[] i = {};
-        DobbeltLenketListe<Integer> iliste = new DobbeltLenketListe<>(i);
+        Beholder.DobbeltLenketListe<Integer> iliste = new Beholder.DobbeltLenketListe<>(i);
 
         if (!iliste.subliste(0, 0).toString().equals("[]")) {
             antallFeil++;
@@ -452,7 +452,7 @@ public class Oblig2Test {
         }
 
         Character[] c = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',};
-        DobbeltLenketListe<Character> cliste = new DobbeltLenketListe<>(c);
+        Beholder.DobbeltLenketListe<Character> cliste = new Beholder.DobbeltLenketListe<>(c);
 
         if (!cliste.subliste(0, 1).toString().equals("[A]")) {
             antallFeil++;
@@ -540,7 +540,7 @@ public class Oblig2Test {
     public static int oppgave4() {
         int antallFeil = 0;
 
-        DobbeltLenketListe<String> sliste = new DobbeltLenketListe<>();
+        Beholder.DobbeltLenketListe<String> sliste = new Beholder.DobbeltLenketListe<>();
         sliste.leggInn("A");
 
         if (sliste.indeksTil(new String("A")) != 0) {
@@ -549,7 +549,7 @@ public class Oblig2Test {
             System.out.println("            og ikke == i sammenligningen i indeksTil()!");
         }
 
-        Liste<Integer> liste = new DobbeltLenketListe<>();
+        Liste<Integer> liste = new Beholder.DobbeltLenketListe<>();
 
         if (liste.indeksTil(2) != -1) {
             antallFeil++;
@@ -596,7 +596,7 @@ public class Oblig2Test {
             System.out.println("Oppgave 4h: Feil i metoden inneholder()!");
         }
 
-        sliste = new DobbeltLenketListe<>();
+        sliste = new Beholder.DobbeltLenketListe<>();
         sliste.leggInn("Kari");
         sliste.leggInn("Kari");
 
@@ -614,7 +614,7 @@ public class Oblig2Test {
     public static int oppgave5() {
         int antallFeil = 0;
 
-        DobbeltLenketListe<Integer> liste = new DobbeltLenketListe<>();
+        Beholder.DobbeltLenketListe<Integer> liste = new Beholder.DobbeltLenketListe<>();
 
         try {
             liste.leggInn(-1, 1);
@@ -652,7 +652,7 @@ public class Oblig2Test {
             }
         }
 
-        liste = new DobbeltLenketListe<>();
+        liste = new Beholder.DobbeltLenketListe<>();
 
         try {
             liste.leggInn(0, 4);
@@ -664,7 +664,7 @@ public class Oblig2Test {
             return antallFeil;
         }
 
-        liste = new DobbeltLenketListe<>();
+        liste = new Beholder.DobbeltLenketListe<>();
 
         liste.leggInn(0, 4);  // ny verdi i tom liste
         liste.leggInn(0, 2);  // ny verdi legges forrest
@@ -696,7 +696,7 @@ public class Oblig2Test {
     public static int oppgave6() {
         int antallFeil = 0;
 
-        DobbeltLenketListe<String> liste = new DobbeltLenketListe<>();
+        Beholder.DobbeltLenketListe<String> liste = new Beholder.DobbeltLenketListe<>();
 
         try {
             liste.fjern(0);
@@ -710,7 +710,7 @@ public class Oblig2Test {
             }
         }
 
-        liste = new DobbeltLenketListe<>(new String[]{"A", "B", "C", "D", "E", "F", "G"});
+        liste = new Beholder.DobbeltLenketListe<>(new String[]{"A", "B", "C", "D", "E", "F", "G"});
 
         try {
             liste.fjern(7);
@@ -837,7 +837,7 @@ public class Oblig2Test {
             antallFeil++;
         }
 
-        liste = new DobbeltLenketListe<>();
+        liste = new Beholder.DobbeltLenketListe<>();
         liste.leggInn("A");
         liste.leggInn("B");
         liste.leggInn("C");
@@ -854,7 +854,7 @@ public class Oblig2Test {
             System.out.println("            og ikke == i sammenligningen i fjern(T)!");
         }
 
-        liste = new DobbeltLenketListe<>();
+        liste = new Beholder.DobbeltLenketListe<>();
         liste.leggInn("A");
 
         try {
@@ -944,13 +944,13 @@ public class Oblig2Test {
             antallFeil++;
         }
 
-        Liste<Integer> nyliste = new DobbeltLenketListe<>();
+        Liste<Integer> nyliste = new Beholder.DobbeltLenketListe<>();
 
         for (int i = 1; i <= 100_000; i++) nyliste.leggInn(i);
         long tid1 = System.currentTimeMillis();
         for (int i = 40000; i <= 50000; i++) nyliste.fjern(new Integer(i));
         tid1 = System.currentTimeMillis() - tid1;
-        nyliste = new DobbeltLenketListe<>();
+        nyliste = new Beholder.DobbeltLenketListe<>();
 
         for (int i = 1; i <= 100_000; i++) nyliste.leggInn(i);
         long tid2 = System.currentTimeMillis();
@@ -973,7 +973,7 @@ public class Oblig2Test {
     public static int oppgave7() {
         int antallFeil = 0;
 
-        DobbeltLenketListe<Integer> liste = new DobbeltLenketListe<>();
+        Beholder.DobbeltLenketListe<Integer> liste = new Beholder.DobbeltLenketListe<>();
 
         for (int i = 1; i <= 7; i++) {
             liste.leggInn(i);
@@ -1010,7 +1010,7 @@ public class Oblig2Test {
     public static int oppgave8() {
         int antallFeil = 0;
 
-        DobbeltLenketListe<Integer> liste = new DobbeltLenketListe<>();
+        Beholder.DobbeltLenketListe<Integer> liste = new Beholder.DobbeltLenketListe<>();
 
         try {
             Iterator<Integer> i = liste.iterator();
@@ -1204,7 +1204,7 @@ public class Oblig2Test {
     public static int oppgave9() {
         int antallFeil = 0;
 
-        DobbeltLenketListe<Integer> liste = new DobbeltLenketListe<>();
+        Beholder.DobbeltLenketListe<Integer> liste = new Beholder.DobbeltLenketListe<>();
 
         for (int k = 1; k <= 13; k++) {
             liste.leggInn(k);
@@ -1298,10 +1298,10 @@ public class Oblig2Test {
     public static int oppgave10() {
         int antallFeil = 0;
 
-        DobbeltLenketListe<String> liste = new DobbeltLenketListe<>(new String[0]);
+        Beholder.DobbeltLenketListe<String> liste = new Beholder.DobbeltLenketListe<>(new String[0]);
 
         try {
-            DobbeltLenketListe.sorter(liste, Comparator.naturalOrder());
+            Beholder.DobbeltLenketListe.sorter(liste, Comparator.naturalOrder());
 
             if (!liste.toString().equals("[]")) {
                 System.out.println("Oppgave 10a: Feil for tom liste!");
@@ -1312,24 +1312,24 @@ public class Oblig2Test {
             antallFeil++;
         }
 
-        liste = new DobbeltLenketListe<>(new String[]{"A"});
-        DobbeltLenketListe.sorter(liste, Comparator.naturalOrder());
+        liste = new Beholder.DobbeltLenketListe<>(new String[]{"A"});
+        Beholder.DobbeltLenketListe.sorter(liste, Comparator.naturalOrder());
 
         if (!liste.toString().equals("[A]")) {
             System.out.println("Oppgave 10c: Feil for liste med ett element!");
             antallFeil++;
         }
 
-        liste = new DobbeltLenketListe<>(new String[]{"C", "B", "A"});
-        DobbeltLenketListe.sorter(liste, Comparator.naturalOrder());
+        liste = new Beholder.DobbeltLenketListe<>(new String[]{"C", "B", "A"});
+        Beholder.DobbeltLenketListe.sorter(liste, Comparator.naturalOrder());
 
         if (!liste.toString().equals("[A, B, C]")) {
             System.out.println("Oppgave 10d: Feil for listen C, B, A!");
             antallFeil++;
         }
 
-        liste = new DobbeltLenketListe<>(new String[]{"G", "B", "F", "C", "E", "D", "A"});
-        DobbeltLenketListe.sorter(liste, Comparator.naturalOrder());
+        liste = new Beholder.DobbeltLenketListe<>(new String[]{"G", "B", "F", "C", "E", "D", "A"});
+        Beholder.DobbeltLenketListe.sorter(liste, Comparator.naturalOrder());
 
         if (!liste.toString().equals("[A, B, C, D, E, F, G]")) {
             System.out.println("Oppgave 10e: Feil for listen G, B, F, C, E, D, A!");
@@ -1337,8 +1337,8 @@ public class Oblig2Test {
         }
 
         Integer[] a = {8, 5, 2, 11, 7, 3, 15, 14, 10, 17, 18, 9, 4, 12, 13, 19, 20, 1, 16, 6};
-        DobbeltLenketListe<Integer> intliste = new DobbeltLenketListe<>(a);
-        DobbeltLenketListe.sorter(intliste, Comparator.naturalOrder());
+        Beholder.DobbeltLenketListe<Integer> intliste = new Beholder.DobbeltLenketListe<>(a);
+        Beholder.DobbeltLenketListe.sorter(intliste, Comparator.naturalOrder());
 
         if (!intliste.toString().equals(
                 "[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]")) {

@@ -10,67 +10,6 @@ package Oblig2;
 
 import java.util.*;
 
-//MAIN
-class Main {
-    public static void main(String[] args) {
-
-       /* DobbeltLenketListe<Integer> liste = new DobbeltLenketListe<>();
-        for (int i = 0; i < 100000 ; i++) {
-            liste.leggInn(i);
-        }
-
-        long tid = System.currentTimeMillis();
-        for (int i = 0; i < 100000 ; i++) {
-            liste.nullstill();
-        }
-        tid = System.currentTimeMillis()-tid;
-        System.out.println(tid); */
-
-        /*
-        String[] navn = {"Lars","Anders","Bodil","Kari","Per","Berit"};
-        Liste<String> liste = new DobbeltLenketListe<>(navn);
-        liste.forEach(s -> System.out.print(s + " "));
-        System.out.println();
-        for(String s : liste) System.out.print(s + " ");
-
-
-
-        DobbeltLenketListe<String> liste2 =new DobbeltLenketListe<>(new String[]{"Birger","Lars","Anders","Bodil","Kari","Per","Berit"});
-        liste2.fjernHvis(navn2 -> navn2.charAt(0) == 'B');
-        // fjerner navn som starter med B
-        System.out.println();
-        System.out.println(liste2 + " "+ liste2.omvendtString());
-
-        */
-       /* String[] navn = {"Lars","Anders","Bodil","Kari","Per","Berit"};
-        Liste<String> liste1 = new DobbeltLenketListe<>(navn);
-        Liste<String> liste2 = new TabellListe<>(navn);
-        Liste<String> liste3 = new EnkeltLenketListe<>(navn);
-        DobbeltLenketListe.sorter(liste1, Comparator.naturalOrder());
-        DobbeltLenketListe.sorter(liste2, Comparator.naturalOrder());
-        DobbeltLenketListe.sorter(liste3, Comparator.naturalOrder());
-
-            System.out.println(liste1);  // [Anders, Berit, Bodil, Kari, Lars, Per]
-            System.out.println(liste2);  // [Anders, Berit, Bodil, Kari, Lars, Per]
-            System.out.println(liste3);  // [Anders, Berit, Bodil, Kari, Lars, Per]
-
-        // Tabellen navn er upaavirket:
-            System.out.println(Arrays.toString(navn));
-        // [Lars, Anders, Bodil, Kari, Per, Berit]
-*/
-
-        String[] s1 = {}, s2 = {"A"}, s3 = {null,"A",null,"B",null};
-        DobbeltLenketListe<String> l1 = new DobbeltLenketListe<>(s1);
-        DobbeltLenketListe<String> l2 = new DobbeltLenketListe<>(s2);
-        DobbeltLenketListe<String> l3 = new DobbeltLenketListe<>(s3);
-        System.out.println(l1.toString() + " "+ l2.toString()+ " "+ l3.toString() + " "+ l1.omvendtString() + " "+ l2.omvendtString() + " "+ l3.omvendtString());
-
-
-
-    }
-
-
-}
 
 public class DobbeltLenketListe<T> implements Liste<T> {
     private static final class Node<T>{     // en indre nodeklasse
