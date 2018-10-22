@@ -181,8 +181,6 @@ public class ObligSBinTre<T> implements Beholder<T>
             nFjernet++;
         }
         return nFjernet;
-
-
         */
 
         //throw new UnsupportedOperationException("Ikke kodet ennå!");
@@ -226,6 +224,38 @@ public class ObligSBinTre<T> implements Beholder<T>
     @Override
     public void nullstill()
     {
+        if(!(tom())){
+            Node<T> p = rot;
+            while(p.venstre != null){
+                p = p.venstre;
+            }
+            T verdi = p.verdi;
+
+            for(int i = 0; i < antall; i++){
+                verdi = p.verdi;
+                p = nesteInorden(p);
+                fjern(verdi);
+            }
+        }
+
+
+
+
+
+
+
+    /*
+        Node<T> p = rot, s = null;
+        while(p.venstre != null){
+            p = p.venstre;
+        }
+        s = p;
+        fjern(p.verdi);
+        System.out.println(s.verdi);
+        for(int i = 0; i<antall-1; i++){
+            if(antall)
+            fjern(nesteInorden(p).verdi);
+        }*/
 
 
         //throw new UnsupportedOperationException("Ikke kodet ennå!");
