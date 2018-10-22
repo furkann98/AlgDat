@@ -6,6 +6,21 @@ import java.util.*;
 
 public class ObligSBinTre<T> implements Beholder<T>
 {
+    public static void main(String[]args){
+        ObligSBinTre<Character> tre = new ObligSBinTre<>(Comparator.naturalOrder());
+        String[] s = tre.grener();
+
+        for (String gren : s) System.out.println(gren);
+        // Utskrift:
+        // [I, A, B, H, C, F, E, D]
+        // [I, A, B, H, C, F, G]
+        // [I, T, J, R, O, L, K]
+        // [I, T, J, R, O, L, M, N]
+        // [I, T, J, R, O, P, Q]
+        // [I, T, J, R, S]
+
+    }
+
     private static final class Node<T>   // en indre nodeklasse
     {
         private T verdi;                   // nodens verdi
@@ -413,12 +428,109 @@ public class ObligSBinTre<T> implements Beholder<T>
 
     public String høyreGren()
     {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+        if(tom()) return "[]";
+
+
+        StringBuilder sb = new StringBuilder();
+        sb.append("[");
+
+        Node<T> p = rot;
+        sb.append(rot.verdi);
+
+        while(p.høyre != null || p.venstre != null){
+            while(p.høyre != null){
+                p = p.høyre;
+                sb.append(", " + p.verdi);
+            }
+            while(p.høyre == null && p.venstre != null){
+                p = p.venstre;
+                sb.append(", " + p.verdi);
+            }
+        }
+
+
+        sb.append("]");
+
+        return sb.toString();
+        // throw new UnsupportedOperationException("Ikke kodet ennå!");
     }
 
     public String lengstGren()
     {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+
+        if(tom()) return "[]";
+
+
+        //Lager en hjelpe-stack, til å bevege seg nedover treeet, og finne lengst vei
+        ArrayDeque<Node<T>> stack = new ArrayDeque<>();
+        //Starter med rot-noden
+        stack.addFirst(rot);
+        Node<T> p = rot;
+
+        //Mens stakken IKKE er tom
+        //Stacker opp verdier og fjerner alltid første(siste)verdi
+        while(!stack.isEmpty()){
+            p = stack.removeLast();
+
+            //Setter inn p i passende posisjon, om plassen er ledig eller ikke.
+            if(p.høyre != null){
+                stack.addFirst(p.høyre);
+            }
+            if(p.venstre != null){
+                stack.addFirst(p.venstre);
+            }
+
+        }
+
+        //hjelpeverdi- siste bladnode
+        T verdi = p.verdi;
+       // p = rot;
+        StringBuilder sb = new StringBuilder();
+        ArrayDeque<Node<T>> stakk2 = new ArrayDeque<>();
+        stakk2.addFirst(p);
+        sb.append("[");
+        while(p.forelder != null){
+            p = p.forelder;
+            stakk2.addFirst(p);
+        }
+
+        sb.append(stakk2.pop());
+        while (!stakk2.isEmpty()){
+            sb.append(", ").append(stakk2.pop());
+        }
+        sb.append("]");
+        return sb.toString();
+
+/*
+        StringBuilder sb = new StringBuilder();
+        sb.append("[").append(p.verdi);
+
+        while(p.høyre != null || p.venstre != null){
+
+            //sammenligner verdier om hvor de skal, -1 = venstre, 0 eller høyere = høyre
+            //sammenligner siste node, og rotnoden.
+            int cmp = comp.compare(verdi, p.verdi);
+
+
+            if(cmp < 0){
+                p = p.venstre;
+            }else if(cmp == 0){
+                p = p.høyre;
+            }else{
+                p = p.høyre;
+            }
+            sb.append(", ").append(p.verdi);
+        }
+
+        sb.append("]");
+
+        return sb.toString(); */
+
+
+
+
+        // throw new UnsupportedOperationException("Ikke kodet ennå!");
+
     }
 
     public String[] grener()
