@@ -6,8 +6,18 @@ import java.util.*;
 
 public class ObligSBinTre<T> implements Beholder<T>
 {
+
+
     public static void main(String[]args){
+
         ObligSBinTre<Character> tre = new ObligSBinTre<>(Comparator.naturalOrder());
+        char[] verdier = "IATBHJCRSOFELKGDMPQN".toCharArray();
+        for (char c : verdier) tre.leggInn(c);
+
+        //System.out.println(tre.høyreGren() + " " + tre.lengstGren());
+
+        // Utskrift: [I, T, J, R, S] [I, A, B, H, C, F, E, D]
+
         String[] s = tre.grener();
 
         for (String gren : s) System.out.println(gren);
@@ -18,6 +28,7 @@ public class ObligSBinTre<T> implements Beholder<T>
         // [I, T, J, R, O, L, M, N]
         // [I, T, J, R, O, P, Q]
         // [I, T, J, R, S]
+
 
     }
 
@@ -533,14 +544,68 @@ public class ObligSBinTre<T> implements Beholder<T>
 
     }
 
-    public String[] grener()
-    {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+    public String[] grener() {
+
+        if(tom()) return new String[]{"[]"};
+
+        // Hjelpevariabler / stack
+        ArrayDeque<Node<T>> stakk = new ArrayDeque<>();
+        Node<T> p = rot;
+
+        //Drar til nederste node - til venstre
+        while (p.venstre != null){
+            p = p.venstre;
+        }
+
+        //Sjekker om noden er en bladnode
+        if(p.høyre == null && p.venstre == null){
+            stakk.addLast(p);
+        }
+
+        //Itererer gjennom alle noder, og legger til bladnode(r) til hver gren,
+        // og sjekker om de har nådd høyre(siste bladnode)
+        //legger inn i stacken
+        while (nesteInorden(p) != null){
+            p = nesteInorden(p);
+            if(p.venstre == null && p.høyre == null){
+                stakk.addLast(p);
+            }
+        }
+
+        //Hjelpevariabler
+        int i = 0;
+        String[] st = new String[stakk.size()];
+
+        // Ferdig stringbuilder
+        while(!stakk.isEmpty()){
+            //
+            Node<T> node = stakk.pop();
+            StringBuilder sb = new StringBuilder();
+            ArrayDeque<Node<T>> stakk2 = new ArrayDeque<>();
+            stakk2.addFirst(node);
+            sb.append("[");
+            while(node.forelder != null){
+                node = node.forelder;
+                stakk2.addFirst(node);
+            }
+
+            sb.append(stakk2.pop());
+            while (!stakk2.isEmpty()){
+                sb.append(", ").append(stakk2.pop());
+            }
+            sb.append("]");
+
+            st[i] = sb.toString();
+            i++;
+        }
+
+        return st;
     }
 
     public String bladnodeverdier()
     {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+
+         throw new UnsupportedOperationException("Ikke kodet ennå!");
     }
 
     public String postString()

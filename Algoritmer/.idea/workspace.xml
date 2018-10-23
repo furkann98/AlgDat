@@ -23,27 +23,23 @@
       <file leaf-file-name="ObligSBinTre.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Oblig3/ObligSBinTre.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7646">
-              <caret line="19" column="26" lean-forward="false" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+            <state relative-caret-position="118">
+              <caret line="16" column="10" lean-forward="false" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
               <folding>
-                <element signature="e#5664#5665#0" expanded="true" />
-                <element signature="e#5693#5694#0" expanded="true" />
-                <element signature="e#6204#6205#0" expanded="true" />
-                <element signature="e#6238#6239#0" expanded="true" />
-                <element signature="e#12844#12845#0" expanded="true" />
-                <element signature="e#12919#12920#0" expanded="true" />
-                <element signature="e#12962#12963#0" expanded="true" />
-                <element signature="e#13037#13038#0" expanded="true" />
-                <element signature="e#13075#13076#0" expanded="true" />
-                <element signature="e#13150#13151#0" expanded="true" />
-                <element signature="e#13205#13206#0" expanded="true" />
-                <element signature="e#13250#13251#0" expanded="true" />
-                <element signature="e#13658#13659#0" expanded="true" />
-                <element signature="e#13726#13727#0" expanded="true" />
-                <element signature="e#13779#13780#0" expanded="true" />
-                <element signature="e#13862#13863#0" expanded="true" />
-                <element signature="e#13920#13921#0" expanded="true" />
-                <element signature="e#14003#14004#0" expanded="true" />
+                <element signature="e#5915#5916#0" expanded="true" />
+                <element signature="e#5944#5945#0" expanded="true" />
+                <element signature="e#6455#6456#0" expanded="true" />
+                <element signature="e#6489#6490#0" expanded="true" />
+                <element signature="e#14808#14809#0" expanded="true" />
+                <element signature="e#14883#14884#0" expanded="true" />
+                <element signature="e#14938#14939#0" expanded="true" />
+                <element signature="e#14983#14984#0" expanded="true" />
+                <element signature="e#15391#15392#0" expanded="true" />
+                <element signature="e#15459#15460#0" expanded="true" />
+                <element signature="e#15512#15513#0" expanded="true" />
+                <element signature="e#15595#15596#0" expanded="true" />
+                <element signature="e#15653#15654#0" expanded="true" />
+                <element signature="e#15736#15737#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -52,8 +48,8 @@
       <file leaf-file-name="Oblig3Test.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Oblig3/Oblig3Test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="596" column="6" lean-forward="true" selection-start-line="596" selection-start-column="6" selection-end-line="596" selection-end-column="6" />
+            <state relative-caret-position="101">
+              <caret line="683" column="0" lean-forward="true" selection-start-line="683" selection-start-column="0" selection-end-line="683" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -73,8 +69,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>iterator</find>
-      <find>nullstil</find>
       <find>dobbelt</find>
       <find>oppdater</find>
       <find>Oppga</find>
@@ -100,9 +94,11 @@
       <find>6</find>
       <find>høyreg</find>
       <find>6e</find>
-      <find>6j</find>
       <find>c</find>
       <find>høyre</find>
+      <find>høyregren</find>
+      <find>leggI</find>
+      <find>6j</find>
     </findStrings>
   </component>
   <component name="GradleLocalSettings">
@@ -219,7 +215,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Oblig3Test">
+  <component name="RunManager" selected="Application.ObligSBinTre">
     <configuration name="MainOblig2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -339,8 +335,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.Oblig3Test" />
-        <item index="1" class="java.lang.String" itemvalue="Application.ObligSBinTre" />
+        <item index="0" class="java.lang.String" itemvalue="Application.ObligSBinTre" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Oblig3Test" />
         <item index="2" class="java.lang.String" itemvalue="Application.Oblig2Test" />
         <item index="3" class="java.lang.String" itemvalue="Application.MainOblig2" />
         <item index="4" class="java.lang.String" itemvalue="Application.Oblig1Test" />
@@ -371,12 +367,12 @@
       <workItem from="1539010278713" duration="11483000" />
       <workItem from="1539355225717" duration="179000" />
       <workItem from="1539779414512" duration="260000" />
-      <workItem from="1540202904145" duration="12517000" />
+      <workItem from="1540202904145" duration="16442000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="139083000" />
+    <option name="totallyTimeSpent" value="143008000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="99" y="24" width="1017" height="709" extended-state="0" />
@@ -391,7 +387,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24175824" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24175824" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -746,8 +742,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Oblig3/Oblig3Test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="596" column="6" lean-forward="true" selection-start-line="596" selection-start-column="6" selection-end-line="596" selection-end-column="6" />
+        <state relative-caret-position="101">
+          <caret line="683" column="0" lean-forward="true" selection-start-line="683" selection-start-column="0" selection-end-line="683" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -756,27 +752,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Oblig3/ObligSBinTre.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7646">
-          <caret line="19" column="26" lean-forward="false" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+        <state relative-caret-position="118">
+          <caret line="16" column="10" lean-forward="false" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
           <folding>
-            <element signature="e#5664#5665#0" expanded="true" />
-            <element signature="e#5693#5694#0" expanded="true" />
-            <element signature="e#6204#6205#0" expanded="true" />
-            <element signature="e#6238#6239#0" expanded="true" />
-            <element signature="e#12844#12845#0" expanded="true" />
-            <element signature="e#12919#12920#0" expanded="true" />
-            <element signature="e#12962#12963#0" expanded="true" />
-            <element signature="e#13037#13038#0" expanded="true" />
-            <element signature="e#13075#13076#0" expanded="true" />
-            <element signature="e#13150#13151#0" expanded="true" />
-            <element signature="e#13205#13206#0" expanded="true" />
-            <element signature="e#13250#13251#0" expanded="true" />
-            <element signature="e#13658#13659#0" expanded="true" />
-            <element signature="e#13726#13727#0" expanded="true" />
-            <element signature="e#13779#13780#0" expanded="true" />
-            <element signature="e#13862#13863#0" expanded="true" />
-            <element signature="e#13920#13921#0" expanded="true" />
-            <element signature="e#14003#14004#0" expanded="true" />
+            <element signature="e#5915#5916#0" expanded="true" />
+            <element signature="e#5944#5945#0" expanded="true" />
+            <element signature="e#6455#6456#0" expanded="true" />
+            <element signature="e#6489#6490#0" expanded="true" />
+            <element signature="e#14808#14809#0" expanded="true" />
+            <element signature="e#14883#14884#0" expanded="true" />
+            <element signature="e#14938#14939#0" expanded="true" />
+            <element signature="e#14983#14984#0" expanded="true" />
+            <element signature="e#15391#15392#0" expanded="true" />
+            <element signature="e#15459#15460#0" expanded="true" />
+            <element signature="e#15512#15513#0" expanded="true" />
+            <element signature="e#15595#15596#0" expanded="true" />
+            <element signature="e#15653#15654#0" expanded="true" />
+            <element signature="e#15736#15737#0" expanded="true" />
           </folding>
         </state>
       </provider>
