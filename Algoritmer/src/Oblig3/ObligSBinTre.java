@@ -17,10 +17,13 @@ public class ObligSBinTre<T> implements Beholder<T>
         //System.out.println(tre.høyreGren() + " " + tre.lengstGren());
 
         // Utskrift: [I, T, J, R, S] [I, A, B, H, C, F, E, D]
+        System.out.println("før: " + tre.toString());
+        tre.nullstill();
+        System.out.println("etter: " + tre.toString());
 
         String[] s = tre.grener();
 
-        for (String gren : s) System.out.println(gren);
+        //for (String gren : s) System.out.println(gren);
         // Utskrift:
         // [I, A, B, H, C, F, E, D]
         // [I, A, B, H, C, F, G]
@@ -29,6 +32,8 @@ public class ObligSBinTre<T> implements Beholder<T>
         // [I, T, J, R, O, P, Q]
         // [I, T, J, R, S]
 
+        System.out.println(tre.bladnodeverdier());
+        // Utskrift: [D, G, K, N, Q, S]
 
     }
 
@@ -251,6 +256,7 @@ public class ObligSBinTre<T> implements Beholder<T>
     public void nullstill()
     {
         if(!(tom())){
+            int antall = antall();
             Node<T> p = rot;
             while(p.venstre != null){
                 p = p.venstre;
@@ -546,7 +552,7 @@ public class ObligSBinTre<T> implements Beholder<T>
 
     public String[] grener() {
 
-        if(tom()) return new String[]{"[]"};
+        if(tom()) return new String[]{};
 
         // Hjelpevariabler / stack
         ArrayDeque<Node<T>> stakk = new ArrayDeque<>();
@@ -604,13 +610,47 @@ public class ObligSBinTre<T> implements Beholder<T>
 
     public String bladnodeverdier()
     {
+        if(tom()) return "[]";
 
-         throw new UnsupportedOperationException("Ikke kodet ennå!");
+        // Hjelpevariabler / stack
+        ArrayDeque<Node<T>> stakk = new ArrayDeque<>();
+        Node<T> p = rot;
+
+        //Drar til nederste node - til venstre
+        while (p.venstre != null){
+            p = p.venstre;
+        }
+
+        //Sjekker om noden er en bladnode
+        if(p.høyre == null && p.venstre == null){
+            stakk.addLast(p);
+        }
+
+        //Itererer gjennom alle noder, og legger til bladnode(r) til hver gren,
+        // og sjekker om de har nådd høyre(siste bladnode)
+        //legger inn i stacken
+        while (nesteInorden(p) != null){
+            p = nesteInorden(p);
+            if(p.venstre == null && p.høyre == null){
+                stakk.addLast(p);
+            }
+        }
+
+        //Legger til stack verdiene i en string
+        String bladNode = "[";
+        bladNode += stakk.pop();
+        while (!(stakk.isEmpty())){
+            bladNode += ", " + stakk.pop();
+        }
+        bladNode += "]";
+
+        return bladNode;
     }
 
     public String postString()
     {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+        //throw new UnsupportedOperationException("Ikke kodet ennå!");
+        return "";
     }
 
     @Override

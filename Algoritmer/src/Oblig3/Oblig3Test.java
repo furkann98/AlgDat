@@ -660,6 +660,7 @@ public class Oblig3Test
         for (int verdi : a) tre.leggInn(verdi);
         s = tre.grener();
 
+
         if (!s[0].equals("[4, 1, 3, 2]") || !s[1].equals("[4, 6, 5]")
                 || !s[2].equals("[4, 6, 8, 7]") || !s[3].equals("[4, 6, 8, 9]"))
         {
