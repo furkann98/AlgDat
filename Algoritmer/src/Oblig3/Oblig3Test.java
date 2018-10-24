@@ -34,7 +34,7 @@ public class Oblig3Test
     antallFeil += oppgave6();
     antallFeil += oppgave7();
     antallFeil += oppgave8();
-    //antallFeil += oppgave9();
+    antallFeil += oppgave9();
     //antallFeil += oppgave10();
 
         if (antallFeil == 0)
@@ -388,8 +388,9 @@ public class Oblig3Test
             antallFeil++;
             System.out.println("Oppgave 5l: Feil i fjern(T)!");
         }
-
+        System.out.println(tre);
         tre.nullstill();
+        System.out.println(tre);
 
         if (tre.antall() != 0)
         {

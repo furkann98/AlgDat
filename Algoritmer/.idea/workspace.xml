@@ -20,14 +20,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ObligSBinTre.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ObligSBinTre.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Oblig3/ObligSBinTre.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="267" column="36" lean-forward="true" selection-start-line="267" selection-start-column="36" selection-end-line="267" selection-end-column="36" />
+            <state relative-caret-position="487">
+              <caret line="684" column="0" lean-forward="false" selection-start-line="684" selection-start-column="0" selection-end-line="684" selection-end-column="0" />
               <folding>
-                <element signature="e#16159#16160#0" expanded="true" />
-                <element signature="e#16204#16205#0" expanded="true" />
+                <element signature="e#15949#15950#0" expanded="true" />
+                <element signature="e#15994#15995#0" expanded="true" />
+                <element signature="e#16839#16840#0" expanded="true" />
+                <element signature="e#16907#16908#0" expanded="true" />
+                <element signature="e#17773#17774#0" expanded="true" />
+                <element signature="e#17856#17857#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -36,11 +40,21 @@
       <file leaf-file-name="Oblig3Test.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Oblig3/Oblig3Test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="657" column="0" lean-forward="true" selection-start-line="657" selection-start-column="0" selection-end-line="657" selection-end-column="0" />
+            <state relative-caret-position="157">
+              <caret line="835" column="0" lean-forward="false" selection-start-line="835" selection-start-column="0" selection-end-line="835" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DobbeltLenketListe.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Oblig2/DobbeltLenketListe.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-117">
+              <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -57,11 +71,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>9f</find>
-      <find>String</find>
-      <find>dobbeltlenketliste</find>
-      <find>sort</find>
-      <find>string</find>
       <find>sorter</find>
       <find>next()</find>
       <find>ITERATOR</find>
@@ -86,6 +95,11 @@
       <find>6j</find>
       <find>grener</find>
       <find>nullst</find>
+      <find>array</find>
+      <find>Node&lt;T&gt;</find>
+      <find>post</find>
+      <find>bladnodeit</find>
+      <find>nulls</find>
       <find>7e</find>
     </findStrings>
   </component>
@@ -109,8 +123,8 @@
         <option value="$PROJECT_DIR$/src/Oblig2/EnkeltLenketListe.java" />
         <option value="$PROJECT_DIR$/src/Oblig2/DobbeltLenketListe.java" />
         <option value="$PROJECT_DIR$/src/Oblig2/Oblig2Test.java" />
-        <option value="$PROJECT_DIR$/src/Oblig3/ObligSBinTre.java" />
         <option value="$PROJECT_DIR$/src/Oblig3/Oblig3Test.java" />
+        <option value="$PROJECT_DIR$/src/Oblig3/ObligSBinTre.java" />
       </list>
     </option>
   </component>
@@ -120,11 +134,10 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="99" />
-    <option name="y" value="24" />
-    <option name="width" value="1017" />
-    <option name="height" value="709" />
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="1440" />
+    <option name="height" value="820" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -356,15 +369,15 @@
       <workItem from="1539355225717" duration="179000" />
       <workItem from="1539779414512" duration="260000" />
       <workItem from="1540202904145" duration="16442000" />
-      <workItem from="1540294069569" duration="1783000" />
+      <workItem from="1540294069569" duration="5738000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="144791000" />
+    <option name="totallyTimeSpent" value="148746000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="820" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="820" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -405,23 +418,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Oblig3/ObligSBinTre.java</url>
-          <line>20</line>
-          <properties />
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/Oblig3/ObligSBinTre.java</url>
-          <line>255</line>
-          <properties class="Oblig3.ObligSBinTre" method="nullstill">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="18" />
+      <option name="time" value="20" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -716,34 +713,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Oblig2/DobbeltLenketListe.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1591">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding>
-            <element signature="e#3052#3053#0" expanded="false" />
-            <element signature="e#3081#3082#0" expanded="false" />
-            <element signature="e#3123#3124#0" expanded="false" />
-            <element signature="e#3195#3196#0" expanded="false" />
-            <element signature="e#10469#10470#0" expanded="false" />
-            <element signature="e#10524#10525#0" expanded="false" />
-            <element signature="e#11432#11433#0" expanded="false" />
-            <element signature="e#11510#11511#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Oblig3/Beholder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" column="27" lean-forward="false" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Oblig3/Oblig3Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="657" column="0" lean-forward="true" selection-start-line="657" selection-start-column="0" selection-end-line="657" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -752,12 +725,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Oblig3/ObligSBinTre.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="267" column="36" lean-forward="true" selection-start-line="267" selection-start-column="36" selection-end-line="267" selection-end-column="36" />
+        <state relative-caret-position="487">
+          <caret line="684" column="0" lean-forward="false" selection-start-line="684" selection-start-column="0" selection-end-line="684" selection-end-column="0" />
           <folding>
-            <element signature="e#16159#16160#0" expanded="true" />
-            <element signature="e#16204#16205#0" expanded="true" />
+            <element signature="e#15949#15950#0" expanded="true" />
+            <element signature="e#15994#15995#0" expanded="true" />
+            <element signature="e#16839#16840#0" expanded="true" />
+            <element signature="e#16907#16908#0" expanded="true" />
+            <element signature="e#17773#17774#0" expanded="true" />
+            <element signature="e#17856#17857#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Oblig3/Oblig3Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="835" column="0" lean-forward="false" selection-start-line="835" selection-start-column="0" selection-end-line="835" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Oblig2/DobbeltLenketListe.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-117">
+          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
