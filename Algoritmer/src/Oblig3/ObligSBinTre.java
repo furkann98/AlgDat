@@ -178,6 +178,7 @@ public class ObligSBinTre<T> implements Beholder<T>
         }
 
         antall--;   // det er nå én node mindre i treet
+        endringer++;
         return true;
 
 
@@ -245,6 +246,7 @@ public class ObligSBinTre<T> implements Beholder<T>
             int antall = antall();
             if(antall == 1){
                 fjern(rot.verdi);
+                endringer++;
             } else {
                 Node<T> p = rot;
                 while (p.venstre != null) {
@@ -256,6 +258,7 @@ public class ObligSBinTre<T> implements Beholder<T>
                     verdi = p.verdi;
                     p = nesteInorden(p);
                     fjern(verdi);
+                    endringer++;
                 }
             }
         }
@@ -651,19 +654,13 @@ public class ObligSBinTre<T> implements Beholder<T>
         private boolean removeOK = false;
         private int iteratorendringer = endringer;
 
-        private BladnodeIterator()  // konstruktør
-        {
-            if(!tom()) {
-                //Drar til nederste node - til venstre
-                while (p.venstre != null) {
-                    p = p.venstre;
-                }
-                //Itererer gjennom alle noder, og legger til bladnode(r) til hver gren,
-                // og sjekker om de har nådd høyre(siste bladnode)
-                //legger inn i stacken
-                while (!(p.høyre == null && p.venstre == null)) {
-                    p = nesteInorden(p);
-                }
+        private BladnodeIterator() { // konstruktør
+            if (tom()) return;
+
+            while (true){
+                if (p.venstre != null) p = p.venstre;
+                else if (p.høyre != null) p = p.høyre;
+                else break;
             }
         }
 
@@ -673,6 +670,26 @@ public class ObligSBinTre<T> implements Beholder<T>
             return p != null;  // Denne skal ikke endres!
         }
 
+        @Override
+        public T next() {
+            if (!hasNext())
+                throw new NoSuchElementException("Ingen fler bladnoder!");
+            else if (endringer != iteratorendringer)
+                throw new ConcurrentModificationException("Endringer(" + endringer + ") != iteratorendringer(" + iteratorendringer +")");
+
+            removeOK = true;
+
+            q = p;
+            T temp = p.verdi;
+            while(hasNext()) {
+                p = nesteInorden(p);
+                if (p == null) return temp;
+
+                if (p.venstre == null && p.høyre == null) return temp;
+            }
+            return temp;
+        }
+/*
         @Override
         public T next()
         {
@@ -698,7 +715,7 @@ public class ObligSBinTre<T> implements Beholder<T>
 
             throw new NoSuchElementException("Finnes ikke flere bladnoder");
         }
-
+*/
         @Override
         public void remove()
         {

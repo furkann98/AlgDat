@@ -20,18 +20,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ObligSBinTre.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ObligSBinTre.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Oblig3/ObligSBinTre.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="487">
-              <caret line="684" column="0" lean-forward="false" selection-start-line="684" selection-start-column="0" selection-end-line="684" selection-end-column="0" />
+            <state relative-caret-position="248">
+              <caret line="180" column="20" lean-forward="false" selection-start-line="180" selection-start-column="20" selection-end-line="180" selection-end-column="20" />
               <folding>
-                <element signature="e#15949#15950#0" expanded="true" />
-                <element signature="e#15994#15995#0" expanded="true" />
-                <element signature="e#16839#16840#0" expanded="true" />
-                <element signature="e#16907#16908#0" expanded="true" />
-                <element signature="e#17773#17774#0" expanded="true" />
-                <element signature="e#17856#17857#0" expanded="true" />
+                <element signature="e#16032#16033#0" expanded="true" />
+                <element signature="e#16077#16078#0" expanded="true" />
+                <element signature="e#16612#16613#0" expanded="true" />
+                <element signature="e#16680#16681#0" expanded="true" />
+                <element signature="e#18202#18203#0" expanded="true" />
+                <element signature="e#18285#18286#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -40,8 +40,8 @@
       <file leaf-file-name="Oblig3Test.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Oblig3/Oblig3Test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="835" column="0" lean-forward="false" selection-start-line="835" selection-start-column="0" selection-end-line="835" selection-end-column="0" />
+            <state relative-caret-position="1527">
+              <caret line="813" column="0" lean-forward="true" selection-start-line="813" selection-start-column="0" selection-end-line="813" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -49,10 +49,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DobbeltLenketListe.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DobbeltLenketListe.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Oblig2/DobbeltLenketListe.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-117">
+            <state relative-caret-position="-5980">
               <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
               <folding />
             </state>
@@ -71,7 +71,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>sorter</find>
       <find>next()</find>
       <find>ITERATOR</find>
       <find>Å</find>
@@ -80,7 +79,6 @@
       <find>legginn</find>
       <find>leggi</find>
       <find>antall</find>
-      <find>fjern</find>
       <find>fjernall</find>
       <find>in</find>
       <find>nullstill</find>
@@ -99,8 +97,10 @@
       <find>Node&lt;T&gt;</find>
       <find>post</find>
       <find>bladnodeit</find>
-      <find>nulls</find>
       <find>7e</find>
+      <find>nulls</find>
+      <find>system</find>
+      <find>fjern</find>
     </findStrings>
   </component>
   <component name="GradleLocalSettings">
@@ -369,12 +369,12 @@
       <workItem from="1539355225717" duration="179000" />
       <workItem from="1539779414512" duration="260000" />
       <workItem from="1540202904145" duration="16442000" />
-      <workItem from="1540294069569" duration="5738000" />
+      <workItem from="1540294069569" duration="6629000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="148746000" />
+    <option name="totallyTimeSpent" value="149637000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="820" extended-state="0" />
@@ -386,7 +386,7 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2413793" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2413793" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -723,36 +723,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Oblig3/ObligSBinTre.java">
+    <entry file="file://$PROJECT_DIR$/src/Oblig2/DobbeltLenketListe.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="487">
-          <caret line="684" column="0" lean-forward="false" selection-start-line="684" selection-start-column="0" selection-end-line="684" selection-end-column="0" />
-          <folding>
-            <element signature="e#15949#15950#0" expanded="true" />
-            <element signature="e#15994#15995#0" expanded="true" />
-            <element signature="e#16839#16840#0" expanded="true" />
-            <element signature="e#16907#16908#0" expanded="true" />
-            <element signature="e#17773#17774#0" expanded="true" />
-            <element signature="e#17856#17857#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-5980">
+          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Oblig3/Oblig3Test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="835" column="0" lean-forward="false" selection-start-line="835" selection-start-column="0" selection-end-line="835" selection-end-column="0" />
+        <state relative-caret-position="1527">
+          <caret line="813" column="0" lean-forward="true" selection-start-line="813" selection-start-column="0" selection-end-line="813" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Oblig2/DobbeltLenketListe.java">
+    <entry file="file://$PROJECT_DIR$/src/Oblig3/ObligSBinTre.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-117">
-          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding />
+        <state relative-caret-position="248">
+          <caret line="180" column="20" lean-forward="false" selection-start-line="180" selection-start-column="20" selection-end-line="180" selection-end-column="20" />
+          <folding>
+            <element signature="e#16032#16033#0" expanded="true" />
+            <element signature="e#16077#16078#0" expanded="true" />
+            <element signature="e#16612#16613#0" expanded="true" />
+            <element signature="e#16680#16681#0" expanded="true" />
+            <element signature="e#18202#18203#0" expanded="true" />
+            <element signature="e#18285#18286#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
