@@ -10,14 +10,6 @@ public class ObligSBinTre<T> implements Beholder<T>
 
     public static void main(String[]args){
 
-        ObligSBinTre<Character> tre = new ObligSBinTre<>(Comparator.naturalOrder());
-        char[] verdier = "IATBHJCRSOFELKGDMPQN".toCharArray();
-        for (char c : verdier) tre.leggInn(c);
-        System.out.println(tre.høyreGren() + " " + tre.lengstGren());
-        // Utskrift: [I, T, J, R, S] [I, A, B, H, C, F, E, D]
-
-        // En for-alle-løkke bruker iteratoren implisitt
-        for (Character c : tre) System.out.print(c + " "); // D G K N Q S
 
 
     }
@@ -320,7 +312,6 @@ public class ObligSBinTre<T> implements Beholder<T>
        }
 
        sb.append("]");
-        //System.out.println(sb.toString());
 
 
         return sb.toString();
@@ -394,7 +385,6 @@ public class ObligSBinTre<T> implements Beholder<T>
         for(int i = 0; i < antall; i++){
             stack.addFirst(p);
             p = nesteInorden(p);
-           // System.out.println("STACK " +  stack.pop());
         }
 
 
@@ -405,7 +395,6 @@ public class ObligSBinTre<T> implements Beholder<T>
         }
 
         sb.append("]");
-        //System.out.println(sb.toString());
 
         return sb.toString();
 

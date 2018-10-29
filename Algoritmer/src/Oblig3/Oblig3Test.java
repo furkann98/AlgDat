@@ -388,9 +388,9 @@ public class Oblig3Test
             antallFeil++;
             System.out.println("Oppgave 5l: Feil i fjern(T)!");
         }
-        System.out.println(tre);
+        
         tre.nullstill();
-        System.out.println(tre);
+
 
         if (tre.antall() != 0)
         {
